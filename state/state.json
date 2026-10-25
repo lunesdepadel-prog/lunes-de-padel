@@ -1,1 +1,146 @@
-{"status": "idle", "telegram_offset": 0}
+{
+  "status": "pending",
+  "telegram_offset": 0,
+  "draft": {
+    "titular_portada": "Milán es de Coello-Tapia y Sánchez-Ustero",
+    "noticias": [
+      {
+        "categoria": "Torneos",
+        "titulo": "Coello y Tapia remontan en Milán y suman su 12º título del año",
+        "resumen": "Coello-Tapia vencieron a Lebrón-Augsburger por 4-6, 6-3 y 6-2 en la final del Milano P1. Es su 12º título de 2026, el cuarto torneo seguido, y ya encadenan 18 victorias consecutivas.",
+        "fecha": "2026-10-18",
+        "fuente": "https://padel.com/2026/10/18/millano-p1-coello-tapia-and-sanchez-ustero-end-the-european-swing-conquering-the-milano-p1/",
+        "imagen": {
+          "tipo": "persona",
+          "personas": [
+            "Agustín Tapia",
+            "Arturo Coello"
+          ],
+          "pagina": ""
+        },
+        "recortes": [
+          "posts/2026-10-18_20261025-215821/recortes/n01_0.png",
+          "posts/2026-10-18_20261025-215821/recortes/n01_1.png"
+        ],
+        "credito": "Foto: Daniel Luque Jiménez (CC BY-SA 4.0, Wikimedia) / Foto: Hombrey (CC0, Wikimedia)",
+        "imagen_estado": "con foto"
+      },
+      {
+        "categoria": "Torneos",
+        "titulo": "Sánchez y Ustero ganan Milán e Ari iguala el récord de 58 títulos",
+        "resumen": "Ari Sánchez y Andrea Ustero superaron a Bea González y Paula Josemaría por 7-6(3) y 6-3 en el Milano P1. Ari llega a 58 títulos, igualando a Gemma Triay y Ale Salazar.",
+        "fecha": "2026-10-18",
+        "fuente": "https://www.redbull.com/int-en/premier-padel-milan-p1-report-highlights",
+        "imagen": {
+          "tipo": "persona",
+          "personas": [
+            "Ariana Sánchez",
+            "Andrea Ustero"
+          ],
+          "pagina": ""
+        },
+        "recortes": [],
+        "credito": "",
+        "imagen_estado": "solo texto"
+      },
+      {
+        "categoria": "Torneos",
+        "titulo": "Ruiz-López y Bidahorria-Riera, campeones del FIP Gold de Sevilla",
+        "resumen": "Víctor Ruiz y Facundo López ganaron a Barahona-Piotto por 4-6, 6-4 y 6-3. En chicas, Julieta Bidahorria y Virginia Riera derrotaron a Sainz-Manquillo por 6-2 y 6-4.",
+        "fecha": "2026-10-18",
+        "fuente": "https://www.padelfip.com/2026/10/ciudad-de-sevilla-bidahorria-and-riera-continue-their-magic-run-ruiz-and-lopez-win-the-mens-title/",
+        "imagen": {
+          "tipo": "ninguna",
+          "personas": [],
+          "pagina": ""
+        },
+        "recortes": [],
+        "imagen_estado": "solo texto"
+      },
+      {
+        "categoria": "Ranking",
+        "titulo": "Tapia y Coello, casi inalcanzables en la carrera por el nº 1",
+        "resumen": "Tras Milán, Coello-Tapia sacan más de 2.800 puntos a Galán-Chingotto en la Race. En chicas, Sánchez-Ustero son segundas y se quedan a 1.980 puntos de Triay-Brea.",
+        "fecha": "2026-10-18",
+        "fuente": "https://padel.com/2026/10/18/millano-p1-coello-tapia-and-sanchez-ustero-end-the-european-swing-conquering-the-milano-p1/",
+        "imagen": {
+          "tipo": "ninguna",
+          "personas": [],
+          "pagina": ""
+        },
+        "recortes": [],
+        "imagen_estado": "solo texto"
+      },
+      {
+        "categoria": "Retiradas",
+        "titulo": "Milán despide a Ale Salazar en su último torneo italiano",
+        "resumen": "Salazar y Osoro cayeron 6-4 y 6-3 ante Sánchez-Ustero en cuartos del Milano P1, con una despedida emotiva del público. Ale se retirará al acabar 2026.",
+        "fecha": "2026-10-16",
+        "fuente": "https://www.padelfip.com/2026/10/day5-the-worlds-top-eight-pairs-all-win-the-most-eagerly-awaited-semi-finals-set-for-saturday-at-the-allianz-cloud-milan-bids-farewell-to-salazar/",
+        "imagen": {
+          "tipo": "persona",
+          "personas": [
+            "Alejandra Salazar"
+          ],
+          "pagina": ""
+        },
+        "recortes": [
+          "posts/2026-10-18_20261025-215821/recortes/n05_0.png"
+        ],
+        "credito": "Foto: DLCAM87 (CC BY-SA 3.0, Wikimedia)",
+        "imagen_estado": "con foto"
+      },
+      {
+        "categoria": "Parejas",
+        "titulo": "Galán descarta separarse de Chingotto",
+        "resumen": "Tras caer en semifinales en Milán, Galán aseguró que la pareja no se rompe y que seguirán intentando derribar a Coello-Tapia. Habían resurgido los rumores de ruptura.",
+        "fecha": "2026-10-17",
+        "fuente": "https://padel-magazine.co.uk/galan-met-fin-aux-rumeurs-de-separation-avec-chingotto-il-y-a-encore-du-chingalan-pour-longtemps/",
+        "imagen": {
+          "tipo": "persona",
+          "personas": [
+            "Alejandro Galán",
+            "Federico Chingotto"
+          ],
+          "pagina": ""
+        },
+        "recortes": [
+          "posts/2026-10-18_20261025-215821/recortes/n06_0.png"
+        ],
+        "credito": "Foto: Barcex (CC BY-SA 4.0, Wikimedia)",
+        "imagen_estado": "con foto"
+      }
+    ],
+    "caption_instagram": "🎾 Semana de Milán y de rachas imparables en el pádel profesional. Te lo resumimos en un minuto 👇\n\n🏆 Coello y Tapia remontan a Lebrón y Augsburger (4-6, 6-3, 6-2) y ganan el Milano P1. Su 12º título del año, cuarto torneo seguido y 18 victorias consecutivas.\n\n👑 Ari Sánchez y Andrea Ustero se imponen a Bea González y Paula Josemaría (7-6, 6-3). Ari llega a 58 títulos e iguala a Triay y Salazar.\n\n🇪🇸 FIP Gold Ciudad de Sevilla: Víctor Ruiz y Facundo López ganan a Barahona-Piotto, y Bidahorria-Riera a Sainz-Manquillo.\n\n📊 Ranking: Coello-Tapia sacan más de 2.800 puntos en la Race a Galán-Chingotto. En chicas, Sánchez-Ustero están a 1.980 de Triay-Brea.\n\n💛 Milán despide a Ale Salazar en cuartos. Se retirará al terminar 2026.\n\n🤝 Galán descarta separarse de Chingotto: dice que seguirán juntos.\n\n¿Quién crees que acabará el año como nº 1 en chicas: Triay-Brea o Sánchez-Ustero? Te leemos en comentarios 👇",
+    "caption_tiktok": "🎾 Resumen de la semana en el pádel:\n🏆 Coello y Tapia ganan el Milano P1 (4-6, 6-3, 6-2 a Lebrón-Augsburger): 12º título del año y 18 victorias seguidas.\n👑 Sánchez y Ustero ganan en chicas y Ari iguala el récord de 58 títulos.\n🇪🇸 Ruiz-López y Bidahorria-Riera, campeones en Sevilla.\n💛 Milán despide a Ale Salazar.\n🤝 Galán descarta separarse de Chingotto.\n¿Quién será nº 1 en chicas? Comenta 👇",
+    "titulo_tiktok": "Lunes de Pádel: Coello-Tapia arrasan en Milán y Ari hace historia",
+    "hashtags": [
+      "#padel",
+      "#premierpadel",
+      "#lunesdepadel",
+      "#milanop1",
+      "#coelloytapia",
+      "#arisanchez",
+      "#alesalazar",
+      "#chingalan",
+      "#fiptour",
+      "#padelespaña",
+      "#padelnews",
+      "#rankingfip"
+    ],
+    "semana": "12–18 oct 2026",
+    "desde": "2026-10-12",
+    "hasta": "2026-10-18",
+    "folder": "2026-10-18_20261025-215821",
+    "images": [
+      "slide_01.jpg",
+      "slide_02.jpg",
+      "slide_03.jpg",
+      "slide_04.jpg",
+      "slide_05.jpg",
+      "slide_06.jpg",
+      "slide_07.jpg",
+      "slide_08.jpg"
+    ]
+  }
+}
