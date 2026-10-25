@@ -1,0 +1,47 @@
+name: Borrador semanal
+
+on:
+  schedule:
+    - cron: "0 6 * * 1"   # lunes 06:00 UTC = 08:00 en España en horario de verano (07:00 en invierno)
+  workflow_dispatch:       # botón "Run workflow" para lanzarlo a mano
+
+permissions:
+  contents: write
+
+concurrency:
+  group: lunes-de-padel
+  cancel-in-progress: false
+
+jobs:
+  generar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+      INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
+      GH_PAT: ${{ secrets.GH_PAT }}
+      PAGES_BASE_URL: ${{ vars.PAGES_BASE_URL }}
+      PUBLISH_INSTAGRAM: ${{ vars.PUBLISH_INSTAGRAM || 'true' }}
+      PUBLISH_TIKTOK: ${{ vars.PUBLISH_TIKTOK || 'true' }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Caché del modelo de recorte (rembg)
+        uses: actions/cache@v4
+        with:
+          path: ~/.u2net
+          key: rembg-isnet-general-use
+      - run: pip install -r requirements.txt
+      - run: python -m diario.generate
+      - name: Guardar borrador en el repositorio
+        if: always()
+        run: |
+          git config user.name "lunes-de-padel-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add state docs
+          git diff --cached --quiet || (git commit -m "Borrador semanal" && git push)
