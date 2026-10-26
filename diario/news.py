@@ -136,6 +136,27 @@ def _extract_json(text: str) -> dict:
     return json.loads(text[start : end + 1])
 
 
+def _pedir_con_herramienta(client, tool: dict, prompt: str, system: str | None = None, max_tokens: int = 4000) -> dict:
+    """Pide a Claude que responda llamando a una herramienta concreta.
+
+    No se fuerza la herramienta (este modelo no lo admite): se le pide en el texto y,
+    si aun así contesta en texto, se intenta leer el JSON de la respuesta.
+    """
+    kwargs = {"system": system} if system else {}
+    response = client.messages.create(
+        model=config.CLAUDE_MODEL,
+        max_tokens=max_tokens,
+        tools=[tool],
+        messages=[{"role": "user", "content": prompt + f"\n\nResponde únicamente llamando a la herramienta {tool['name']}."}],
+        **kwargs,
+    )
+    for block in response.content:
+        if block.type == "tool_use" and block.name == tool["name"]:
+            return dict(block.input)
+    text = "".join(block.text for block in response.content if block.type == "text")
+    return _extract_json(text)
+
+
 def _tool_input(response) -> dict | None:
     for block in response.content:
         if block.type == "tool_use" and block.name == ENTREGA["name"]:
@@ -144,18 +165,10 @@ def _tool_input(response) -> dict | None:
 
 
 def _reparar(client, text: str) -> dict:
-    """Plan B: si Claude escribió el borrador como texto, se le pide que lo pase a la herramienta (forzada)."""
-    response = client.messages.create(
-        model=config.CLAUDE_MODEL,
-        max_tokens=8000,
-        tools=[ENTREGA],
-        tool_choice={"type": "tool", "name": ENTREGA["name"]},
-        messages=[{"role": "user", "content": "Entrega este borrador con la herramienta entregar_borrador, sin cambiar el contenido:\n\n" + text}],
+    """Plan B: si Claude escribió el borrador como texto con un formato roto, se le pide que lo pase a la herramienta."""
+    return _pedir_con_herramienta(
+        client, ENTREGA, "Entrega este borrador con la herramienta entregar_borrador, sin cambiar el contenido:\n\n" + text, max_tokens=8000
     )
-    data = _tool_input(response)
-    if data is None:
-        raise ValueError("Claude no entregó el borrador en el formato esperado.")
-    return data
 
 
 def fetch_weekly_news(start: date, end: date, feedback: str | None = None) -> dict:
@@ -251,12 +264,12 @@ Entrega el resultado con la herramienta entregar_noticia. Si no puedes confirmar
     data = next((dict(b.input) for b in response.content if b.type == "tool_use" and b.name == ENTREGA_NOTICIA["name"]), None)
     if data is None:
         text = "".join(b.text for b in response.content if b.type == "text")
-        forced = client.messages.create(
-            model=config.CLAUDE_MODEL, max_tokens=4000, tools=[ENTREGA_NOTICIA],
-            tool_choice={"type": "tool", "name": ENTREGA_NOTICIA["name"]},
-            messages=[{"role": "user", "content": "Entrega esto con la herramienta entregar_noticia, sin cambiar el contenido:\n\n" + text}],
-        )
-        data = next((dict(b.input) for b in forced.content if b.type == "tool_use"), {})
+        try:
+            data = _pedir_con_herramienta(
+                client, ENTREGA_NOTICIA, "Entrega esto con la herramienta entregar_noticia, sin cambiar el contenido:\n\n" + text
+            )
+        except (ValueError, json.JSONDecodeError):
+            data = {}
     if not data.get("encontrada") or not (data.get("noticia") or {}).get("titulo"):
         raise ValueError(data.get("motivo") or "No he podido confirmar esa noticia en fuentes fiables.")
     return data["noticia"]
@@ -275,10 +288,5 @@ PORTADA: {draft.get('titular_portada', '')}
 INSTAGRAM: {draft.get('caption_instagram', '')}
 TIKTOK: {draft.get('caption_tiktok', '')}
 
-Reescríbelos para que reflejen exactamente estas noticias y en este orden, manteniendo el mismo estilo, tono y longitud: portada (máx. 60 caracteres), Instagram (gancho, una viñeta con emoji por noticia, pregunta final; máx. 1800 caracteres, sin hashtags), TikTok (máx. 900 caracteres, sin hashtags) y título de TikTok (máx. 80 caracteres). No añadas datos que no estén en la lista. Entrégalos con la herramienta entregar_textos."""
-    response = client.messages.create(
-        model=config.CLAUDE_MODEL, max_tokens=4000, system=SYSTEM_PROMPT, tools=[ENTREGA_TEXTOS],
-        tool_choice={"type": "tool", "name": ENTREGA_TEXTOS["name"]},
-        messages=[{"role": "user", "content": prompt}],
-    )
-    return next(dict(b.input) for b in response.content if b.type == "tool_use")
+Reescríbelos para que reflejen exactamente estas noticias y en este orden, manteniendo el mismo estilo, tono y longitud: portada (máx. 60 caracteres), Instagram (gancho, una viñeta con emoji por noticia, pregunta final; máx. 1800 caracteres, sin hashtags), TikTok (máx. 900 caracteres, sin hashtags) y título de TikTok (máx. 80 caracteres). No añadas datos que no estén en la lista."""
+    return _pedir_con_herramienta(client, ENTREGA_TEXTOS, prompt, system=SYSTEM_PROMPT)
