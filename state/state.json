@@ -2,40 +2,19 @@
   "status": "pending",
   "telegram_offset": 0,
   "draft": {
-    "titular_portada": "Milán es de Coello-Tapia y Sánchez-Ustero",
+    "titular_portada": "Galán KO en Kuwait y nuevos campeones en Melilla",
     "noticias": [
       {
         "categoria": "Torneos",
-        "titulo": "Coello y Tapia remontan en Milán y suman su 12º título del año",
-        "resumen": "Coello-Tapia vencieron a Lebrón-Augsburger por 4-6, 6-3 y 6-2 en la final del Milano P1. Es su 12º título de 2026, el cuarto torneo seguido, y ya encadenan 18 victorias consecutivas.",
-        "fecha": "2026-10-18",
-        "fuente": "https://padel.com/2026/10/18/millano-p1-coello-tapia-and-sanchez-ustero-end-the-european-swing-conquering-the-milano-p1/",
+        "titulo": "Bautista-Bergamini y Eugenio-Caldera ganan el FIP Gold Melilla",
+        "resumen": "Jairo Bautista y Lucas Bergamini ganaron la final 6-1 6-4 a Tello y Arce. En chicas, Raquel Eugenio y Bea Caldera vencieron 6-3 6-4 a Fassio y Virseda. Es el 7º título de 2026 para Raquel.",
+        "fecha": "2026-10-24",
+        "fuente": "https://www.padelfip.com/2026/10/melilla-bautista-bergamini-and-eugenio-caldera-triumph-seventh-title-of-2026-for-raquel/",
         "imagen": {
           "tipo": "persona",
           "personas": [
-            "Agustín Tapia",
-            "Arturo Coello"
-          ],
-          "pagina": ""
-        },
-        "recortes": [
-          "posts/2026-10-18_20261025-215821/recortes/n01_0.png",
-          "posts/2026-10-18_20261025-215821/recortes/n01_1.png"
-        ],
-        "credito": "Foto: Daniel Luque Jiménez (CC BY-SA 4.0, Wikimedia) / Foto: Hombrey (CC0, Wikimedia)",
-        "imagen_estado": "con foto"
-      },
-      {
-        "categoria": "Torneos",
-        "titulo": "Sánchez y Ustero ganan Milán e Ari iguala el récord de 58 títulos",
-        "resumen": "Ari Sánchez y Andrea Ustero superaron a Bea González y Paula Josemaría por 7-6(3) y 6-3 en el Milano P1. Ari llega a 58 títulos, igualando a Gemma Triay y Ale Salazar.",
-        "fecha": "2026-10-18",
-        "fuente": "https://www.redbull.com/int-en/premier-padel-milan-p1-report-highlights",
-        "imagen": {
-          "tipo": "persona",
-          "personas": [
-            "Ariana Sánchez",
-            "Andrea Ustero"
+            "Jairo Bautista",
+            "Lucas Bergamini"
           ],
           "pagina": ""
         },
@@ -44,94 +23,125 @@
         "imagen_estado": "solo texto"
       },
       {
-        "categoria": "Torneos",
-        "titulo": "Ruiz-López y Bidahorria-Riera, campeones del FIP Gold de Sevilla",
-        "resumen": "Víctor Ruiz y Facundo López ganaron a Barahona-Piotto por 4-6, 6-4 y 6-3. En chicas, Julieta Bidahorria y Virginia Riera derrotaron a Sainz-Manquillo por 6-2 y 6-4.",
-        "fecha": "2026-10-18",
-        "fuente": "https://www.padelfip.com/2026/10/ciudad-de-sevilla-bidahorria-and-riera-continue-their-magic-run-ruiz-and-lopez-win-the-mens-title/",
-        "imagen": {
-          "tipo": "ninguna",
-          "personas": [],
-          "pagina": ""
-        },
-        "recortes": [],
-        "imagen_estado": "solo texto"
-      },
-      {
-        "categoria": "Ranking",
-        "titulo": "Tapia y Coello, casi inalcanzables en la carrera por el nº 1",
-        "resumen": "Tras Milán, Coello-Tapia sacan más de 2.800 puntos a Galán-Chingotto en la Race. En chicas, Sánchez-Ustero son segundas y se quedan a 1.980 puntos de Triay-Brea.",
-        "fecha": "2026-10-18",
-        "fuente": "https://padel.com/2026/10/18/millano-p1-coello-tapia-and-sanchez-ustero-end-the-european-swing-conquering-the-milano-p1/",
-        "imagen": {
-          "tipo": "ninguna",
-          "personas": [],
-          "pagina": ""
-        },
-        "recortes": [],
-        "imagen_estado": "solo texto"
-      },
-      {
-        "categoria": "Retiradas",
-        "titulo": "Milán despide a Ale Salazar en su último torneo italiano",
-        "resumen": "Salazar y Osoro cayeron 6-4 y 6-3 ante Sánchez-Ustero en cuartos del Milano P1, con una despedida emotiva del público. Ale se retirará al acabar 2026.",
-        "fecha": "2026-10-16",
-        "fuente": "https://www.padelfip.com/2026/10/day5-the-worlds-top-eight-pairs-all-win-the-most-eagerly-awaited-semi-finals-set-for-saturday-at-the-allianz-cloud-milan-bids-farewell-to-salazar/",
+        "categoria": "Otros",
+        "titulo": "Galán y Chingotto, baja en el Kuwait Major por lesión",
+        "resumen": "Ale Galán se ha lesionado y la pareja número 2 no debutará en el Major de Kuwait, donde el campeón se lleva 2.000 puntos. Se complican mucho sus opciones de pelear por el número 1.",
+        "fecha": "2026-10-24",
+        "fuente": "https://www.elneverazo.com/ale-galan-y-fede-chingotto-no-disputaran-el-kuwait-major-premier-padel/",
         "imagen": {
           "tipo": "persona",
           "personas": [
-            "Alejandra Salazar"
+            "Alejandro Galán Romo"
           ],
           "pagina": ""
         },
         "recortes": [
-          "posts/2026-10-18_20261025-215821/recortes/n05_0.png"
-        ],
-        "credito": "Foto: DLCAM87 (CC BY-SA 3.0, Wikimedia)",
-        "imagen_estado": "con foto"
-      },
-      {
-        "categoria": "Parejas",
-        "titulo": "Galán descarta separarse de Chingotto",
-        "resumen": "Tras caer en semifinales en Milán, Galán aseguró que la pareja no se rompe y que seguirán intentando derribar a Coello-Tapia. Habían resurgido los rumores de ruptura.",
-        "fecha": "2026-10-17",
-        "fuente": "https://padel-magazine.co.uk/galan-met-fin-aux-rumeurs-de-separation-avec-chingotto-il-y-a-encore-du-chingalan-pour-longtemps/",
-        "imagen": {
-          "tipo": "persona",
-          "personas": [
-            "Alejandro Galán",
-            "Federico Chingotto"
-          ],
-          "pagina": ""
-        },
-        "recortes": [
-          "posts/2026-10-18_20261025-215821/recortes/n06_0.png"
+          "posts/2026-10-25_20261026-073008/recortes/n02_0.png"
         ],
         "credito": "Foto: Barcex (CC BY-SA 4.0, Wikimedia)",
         "imagen_estado": "con foto"
+      },
+      {
+        "categoria": "Ranking",
+        "titulo": "Coello y Tapia, a un paso de cerrar el número 1 de 2026",
+        "resumen": "Con la baja de Galán y Chingotto, Padel Spain da por zanjada la lucha: Coello y Tapia serían números 1 por tercera temporada seguida. Padel Addict matiza que les basta con ganar el Major de Kuwait.",
+        "fecha": "2026-10-25",
+        "fuente": "https://www.padelspain.net/padel-profesional/835242/galan-y-chingotto-se-ausentan-de-kuwait-una-lesion-impide-su-presencia-en-el-torneo/",
+        "imagen": {
+          "tipo": "persona",
+          "personas": [
+            "Arturo Coello",
+            "Agustín Tapia"
+          ],
+          "pagina": ""
+        },
+        "recortes": [
+          "posts/2026-10-25_20261026-073008/recortes/n03_0.png",
+          "posts/2026-10-25_20261026-073008/recortes/n03_1.png"
+        ],
+        "credito": "Foto: Hombrey (CC0, Wikimedia) / Foto: Daniel Luque Jiménez (CC BY-SA 4.0, Wikimedia)",
+        "imagen_estado": "con foto"
+      },
+      {
+        "categoria": "Selecciones",
+        "titulo": "Mundial de Doha: 32 selecciones y 1,2 M€ en premios",
+        "resumen": "El Mundial (2-7 noviembre) reunirá a 16 selecciones masculinas y 16 femeninas, con el mayor bote de la historia del pádel: 1,2 millones. Las dos últimas plazas se deciden en Kuwait del 26 al 30 de octubre.",
+        "fecha": "2026-10-23",
+        "fuente": "https://tennistonic.com/tennis-news/1070638/padel-fip-world-cup-2026-set-to-bring-32-national-teams-to-doha/",
+        "imagen": {
+          "tipo": "ninguna",
+          "personas": [],
+          "pagina": ""
+        },
+        "recortes": [],
+        "imagen_estado": "solo texto"
+      },
+      {
+        "categoria": "Torneos",
+        "titulo": "Arranca el Kuwait Major: Tapia-Coello se medirán a Abbate-Dal Bianco",
+        "resumen": "El cuadro final masculino empezó el domingo 25. Rubini y Chozas remontaron un 6-1 inicial a Gala y Jensen. Abbate y Dal Bianco ganaron 6-3 6-1 a Gil y Valenzuela y serán los rivales de los números 1.",
+        "fecha": "2026-10-25",
+        "fuente": "https://www.padeladdict.com/resultados-treintaidosavos-kuwait-major-2026/",
+        "imagen": {
+          "tipo": "ninguna",
+          "personas": [],
+          "pagina": ""
+        },
+        "recortes": [],
+        "imagen_estado": "solo texto"
+      },
+      {
+        "categoria": "Otros",
+        "titulo": "Tarragona acogerá las Cupra FIP Finals del 3 al 6 de diciembre",
+        "resumen": "La FIP lo confirmó el 22 de octubre: 32 parejas (16 masculinas y 16 femeninas) jugarán en el Palau d'Esports Catalunya, una semana antes de las Premier Padel Finals de Barcelona. Las entradas ya están a la venta.",
+        "fecha": "2026-10-22",
+        "fuente": "https://www.padelfip.com/2026/10/the-cupra-fip-finals-are-coming-to-tarragona-from-3-to-6-december-featuring-top-international-padel-stars/",
+        "imagen": {
+          "tipo": "ninguna",
+          "personas": [],
+          "pagina": ""
+        },
+        "recortes": [],
+        "imagen_estado": "solo texto"
+      },
+      {
+        "categoria": "Material",
+        "titulo": "Siux 2027: 12 palas nuevas y su primera línea de zapatillas",
+        "resumen": "Siux presentó en Madrid su colección 2027: seis familias y doce palas, con Obsidian como nueva familia de control. Por primera vez lanza zapatillas propias, además de textil y accesorios.",
+        "fecha": "2026-10-21",
+        "fuente": "https://www.padeladdict.com/coleccion-siux-2027-universo-completo-padel/",
+        "imagen": {
+          "tipo": "producto",
+          "personas": [],
+          "pagina": "https://www.siuxpadel.com/en/pages/coleccion-2027"
+        },
+        "recortes": [],
+        "imagen_estado": "solo texto"
       }
     ],
-    "caption_instagram": "🎾 Semana de Milán y de rachas imparables en el pádel profesional. Te lo resumimos en un minuto 👇\n\n🏆 Coello y Tapia remontan a Lebrón y Augsburger (4-6, 6-3, 6-2) y ganan el Milano P1. Su 12º título del año, cuarto torneo seguido y 18 victorias consecutivas.\n\n👑 Ari Sánchez y Andrea Ustero se imponen a Bea González y Paula Josemaría (7-6, 6-3). Ari llega a 58 títulos e iguala a Triay y Salazar.\n\n🇪🇸 FIP Gold Ciudad de Sevilla: Víctor Ruiz y Facundo López ganan a Barahona-Piotto, y Bidahorria-Riera a Sainz-Manquillo.\n\n📊 Ranking: Coello-Tapia sacan más de 2.800 puntos en la Race a Galán-Chingotto. En chicas, Sánchez-Ustero están a 1.980 de Triay-Brea.\n\n💛 Milán despide a Ale Salazar en cuartos. Se retirará al terminar 2026.\n\n🤝 Galán descarta separarse de Chingotto: dice que seguirán juntos.\n\n¿Quién crees que acabará el año como nº 1 en chicas: Triay-Brea o Sánchez-Ustero? Te leemos en comentarios 👇",
-    "caption_tiktok": "🎾 Resumen de la semana en el pádel:\n🏆 Coello y Tapia ganan el Milano P1 (4-6, 6-3, 6-2 a Lebrón-Augsburger): 12º título del año y 18 victorias seguidas.\n👑 Sánchez y Ustero ganan en chicas y Ari iguala el récord de 58 títulos.\n🇪🇸 Ruiz-López y Bidahorria-Riera, campeones en Sevilla.\n💛 Milán despide a Ale Salazar.\n🤝 Galán descarta separarse de Chingotto.\n¿Quién será nº 1 en chicas? Comenta 👇",
-    "titulo_tiktok": "Lunes de Pádel: Coello-Tapia arrasan en Milán y Ari hace historia",
+    "caption_instagram": "🎾 Semana de campeones nuevos, una baja que sacude la lucha por el número 1 y el Mundial en el horizonte. Así fue el pádel de esta semana 👇\n\n🏆 FIP Gold Melilla: Jairo Bautista y Lucas Bergamini ganaron 6-1 6-4 a Tello y Arce. En chicas, Raquel Eugenio y Bea Caldera se llevaron el título (6-3 6-4 a Fassio y Virseda). ¡7º título de 2026 para Raquel!\n\n🤕 Galán y Chingotto no jugarán el Kuwait Major por una lesión de Ale. Se quedan sin una cita de 2.000 puntos.\n\n👑 Con esa baja, Coello y Tapia ven muy cerca el número 1 de 2026. Padel Spain da la lucha por zanjada y Padel Addict matiza que les vale con ganar en Kuwait.\n\n🌍 Mundial de Doha (2-7 nov): 32 selecciones y 1,2 M€ en premios, récord histórico. Las dos últimas plazas se juegan en Kuwait.\n\n🔥 Kuwait Major en marcha: remontada de Rubini y Chozas, y Abbate/Dal Bianco serán el primer rival de Tapia y Coello.\n\n📍 Las Cupra FIP Finals se jugarán en Tarragona del 3 al 6 de diciembre, con 32 parejas.\n\n👟 Siux presenta su colección 2027: 12 palas nuevas y, por primera vez, zapatillas propias.\n\n¿Quién se lleva Kuwait sin Galán y Chingotto? 👇 ¡Te leemos en comentarios!",
+    "caption_tiktok": "🎾 Resumen de la semana en el pádel: 🏆 Bautista y Bergamini ganan el FIP Gold de Melilla, y Raquel Eugenio y Bea Caldera se llevan el título femenino. 🤕 Galán y Chingotto se caen del Kuwait Major por lesión de Ale. 👑 Coello y Tapia, cerca del número 1 de 2026. 🌍 Mundial de Doha: 32 selecciones y 1,2 M€ en premios. 📍 Las Cupra FIP Finals serán en Tarragona. 👟 Siux presenta su colección 2027 con zapatillas propias. ¿Quién gana en Kuwait? 👇",
+    "titulo_tiktok": "Galán KO en Kuwait, campeones en Melilla y Mundial a la vista",
     "hashtags": [
       "#padel",
       "#premierpadel",
-      "#lunesdepadel",
-      "#milanop1",
-      "#coelloytapia",
-      "#arisanchez",
-      "#alesalazar",
-      "#chingalan",
-      "#fiptour",
       "#padelespaña",
+      "#fip",
+      "#kuwaitmajor",
+      "#tapiaycoello",
+      "#galanychingotto",
+      "#mundialpadel",
+      "#fipgold",
       "#padelnews",
-      "#rankingfip"
+      "#lunesdepadel",
+      "#siux",
+      "#padelmundial",
+      "#noticiaspadel"
     ],
-    "semana": "12–18 oct 2026",
-    "desde": "2026-10-12",
-    "hasta": "2026-10-18",
-    "folder": "2026-10-18_20261025-215821",
+    "semana": "19–25 oct 2026",
+    "desde": "2026-10-19",
+    "hasta": "2026-10-25",
+    "folder": "2026-10-25_20261026-073008",
     "images": [
       "slide_01.jpg",
       "slide_02.jpg",
@@ -140,7 +150,8 @@
       "slide_05.jpg",
       "slide_06.jpg",
       "slide_07.jpg",
-      "slide_08.jpg"
+      "slide_08.jpg",
+      "slide_09.jpg"
     ]
   }
 }
