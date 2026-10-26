@@ -1,6 +1,6 @@
 {
   "status": "pending",
-  "telegram_offset": 527771930,
+  "telegram_offset": 527771931,
   "draft": {
     "titular_portada": "Galán KO en Kuwait y nuevos campeones en Melilla",
     "noticias": [
@@ -40,6 +40,18 @@
         ],
         "credito": "Foto: Barcex (CC BY-SA 4.0, Wikimedia)",
         "imagen_estado": "con foto"
+      },
+      {
+        "categoria": "Torneos",
+        "titulo": "Kuwait Major: las 8 parejas que superan la previa y van al cuadro",
+        "resumen": "Cuatro parejas por cuadro superan la previa. Ellos: Fonteny/Moragues, Leygue/Moya, Ortega/Axelsson y Belluati/Abud. Ellas: Ortiz/Ferreyra, Dubins/Luttikhuis, Carrascosa/Fernández y Bahurel/Val.",
+        "fecha": "2026-10-25",
+        "fuente": "https://www.padelfip.com/events/kuwait-major-2026/ | https://www.padelspain.net/padel-profesional/835261/cuatro-parejas-sellan-su-pase-al-cuadro-principal-tras-una-previa-llena-de-sorpresas/",
+        "imagen": {
+          "tipo": "ninguna"
+        },
+        "recortes": [],
+        "imagen_estado": "solo texto"
       },
       {
         "categoria": "Ranking",
@@ -141,7 +153,7 @@
     "semana": "19–25 oct 2026",
     "desde": "2026-10-19",
     "hasta": "2026-10-25",
-    "folder": "2026-10-25_20261026-073008",
+    "folder": "2026-10-25_20261026-113458",
     "images": [
       "slide_01.jpg",
       "slide_02.jpg",
@@ -151,7 +163,8 @@
       "slide_06.jpg",
       "slide_07.jpg",
       "slide_08.jpg",
-      "slide_09.jpg"
+      "slide_09.jpg",
+      "slide_10.jpg"
     ]
   }
 }
