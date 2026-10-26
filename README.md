@@ -16,6 +16,8 @@ Cuenta automática de Instagram y TikTok que cada lunes publica un carrusel con 
 | `/publicar` | Publica en Instagram y TikTok |
 | `/foto 3` (como pie de una foto que envías) | Recorta tu foto y la pone en la diapositiva 3. Puedes añadir crédito: `/foto 3 Foto: @bullpadel` |
 | `/sinfoto 3` | Deja la diapositiva 3 solo con texto |
+| `/añadir 4 las parejas que pasan la previa del Major` | Claude busca solo esa noticia y la mete en la diapositiva 4 sin tocar las demás (sin número, va al final). Actualiza también portada y textos de redes |
+| `/quitar 5` | Quita la noticia de la diapositiva 5 y actualiza portada y textos |
 | `/rehacer quita la noticia X y añade Y` | Claude prepara una nueva versión con tus cambios (se pierden las fotos que hayas puesto tú) |
 | `/cancelar` | Esta semana no se publica |
 | `/generar` | Crea un borrador ahora mismo (útil para probar) |
