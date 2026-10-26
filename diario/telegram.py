@@ -72,6 +72,8 @@ def send_draft(data: dict, images: list[Path]) -> None:
         "/publicar → se publica en Instagram y TikTok\n"
         "/foto 3 → envía una foto con este texto como pie y la pongo (recortada) en la diapositiva 3. Puedes añadir el crédito: /foto 3 Foto: @bullpadel\n"
         "/sinfoto 3 → quito la foto de la diapositiva 3\n"
+        "/añadir 4 <qué noticia> → Claude busca esa noticia y la mete en la diapositiva 4 sin tocar las demás (sin número, va al final)\n"
+        "/quitar 5 → quito la noticia de la diapositiva 5\n"
         "/rehacer <qué cambiar> → Claude vuelve a buscar y redactar (ej: /rehacer quita la noticia de la pala y añade el FIP de Egipto). Ojo: se pierden las fotos que hayas puesto tú\n"
         "/cancelar → esta semana no se publica"
     )

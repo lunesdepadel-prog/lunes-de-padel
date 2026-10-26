@@ -51,7 +51,7 @@ Cubre, en este orden de prioridad:
 
 Haz varias búsquedas, en español y en inglés, y verifica las fechas. Selecciona como máximo las {config.MAX_NEWS} noticias más relevantes. Si una categoría no tiene novedades, simplemente omítela.
 
-Cuando termines de buscar, responde ÚNICAMENTE con un objeto JSON válido (sin texto antes ni después, sin bloques de código) con esta estructura:
+Cuando termines de buscar, entrega el resultado llamando a la herramienta `entregar_borrador` (no lo escribas como texto). Estos son sus campos:
 {{
   "titular_portada": "frase corta y llamativa para la portada (máx. 60 caracteres)",
   "noticias": [
@@ -85,6 +85,48 @@ Sobre "imagen" (cada diapositiva lleva un recorte real relacionado con la notici
     return prompt
 
 
+# Herramienta con la que Claude entrega el borrador: la API garantiza que llega como JSON válido,
+# aunque los textos lleven comillas, saltos de línea o caracteres raros.
+ENTREGA = {
+    "name": "entregar_borrador",
+    "description": "Entrega el borrador final de la semana con las noticias verificadas y los textos para redes.",
+    "input_schema": {
+        "type": "object",
+        "properties": {
+            "titular_portada": {"type": "string"},
+            "noticias": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "categoria": {"type": "string", "enum": CATEGORIAS},
+                        "titulo": {"type": "string"},
+                        "resumen": {"type": "string"},
+                        "fecha": {"type": "string"},
+                        "fuente": {"type": "string"},
+                        "imagen": {
+                            "type": "object",
+                            "properties": {
+                                "tipo": {"type": "string", "enum": ["producto", "persona", "ninguna"]},
+                                "personas": {"type": "array", "items": {"type": "string"}},
+                                "pagina": {"type": "string"},
+                            },
+                            "required": ["tipo"],
+                        },
+                    },
+                    "required": ["categoria", "titulo", "resumen", "fecha", "fuente", "imagen"],
+                },
+            },
+            "caption_instagram": {"type": "string"},
+            "caption_tiktok": {"type": "string"},
+            "titulo_tiktok": {"type": "string"},
+            "hashtags": {"type": "array", "items": {"type": "string"}},
+        },
+        "required": ["titular_portada", "noticias", "caption_instagram", "caption_tiktok", "titulo_tiktok", "hashtags"],
+    },
+}
+
+
 def _extract_json(text: str) -> dict:
     text = text.strip()
     text = re.sub(r"^```(?:json)?\s*|\s*```$", "", text)
@@ -94,10 +136,32 @@ def _extract_json(text: str) -> dict:
     return json.loads(text[start : end + 1])
 
 
+def _tool_input(response) -> dict | None:
+    for block in response.content:
+        if block.type == "tool_use" and block.name == ENTREGA["name"]:
+            return dict(block.input)
+    return None
+
+
+def _reparar(client, text: str) -> dict:
+    """Plan B: si Claude escribió el borrador como texto, se le pide que lo pase a la herramienta (forzada)."""
+    response = client.messages.create(
+        model=config.CLAUDE_MODEL,
+        max_tokens=8000,
+        tools=[ENTREGA],
+        tool_choice={"type": "tool", "name": ENTREGA["name"]},
+        messages=[{"role": "user", "content": "Entrega este borrador con la herramienta entregar_borrador, sin cambiar el contenido:\n\n" + text}],
+    )
+    data = _tool_input(response)
+    if data is None:
+        raise ValueError("Claude no entregó el borrador en el formato esperado.")
+    return data
+
+
 def fetch_weekly_news(start: date, end: date, feedback: str | None = None) -> dict:
     client = anthropic.Anthropic(api_key=config.env("ANTHROPIC_API_KEY"))
     messages = [{"role": "user", "content": build_user_prompt(start, end, feedback)}]
-    tools = [{"type": "web_search_20250305", "name": "web_search", "max_uses": config.MAX_WEB_SEARCHES}]
+    tools = [{"type": "web_search_20250305", "name": "web_search", "max_uses": config.MAX_WEB_SEARCHES}, ENTREGA]
 
     # Las búsquedas largas pueden devolver stop_reason="pause_turn": se continúa la misma petición.
     for _ in range(5):
@@ -112,8 +176,13 @@ def fetch_weekly_news(start: date, end: date, feedback: str | None = None) -> di
             break
         messages = messages + [{"role": "assistant", "content": response.content}]
 
-    text = "".join(block.text for block in response.content if block.type == "text")
-    data = _extract_json(text)
+    data = _tool_input(response)
+    if data is None:
+        text = "".join(block.text for block in response.content if block.type == "text")
+        try:
+            data = _extract_json(text)
+        except (ValueError, json.JSONDecodeError):
+            data = _reparar(client, text)
 
     noticias = [n for n in data.get("noticias", []) if n.get("titulo") and n.get("resumen")]
     data["noticias"] = noticias[: config.MAX_NEWS]
@@ -122,3 +191,94 @@ def fetch_weekly_news(start: date, end: date, feedback: str | None = None) -> di
     data["semana"] = week_label(start, end)
     data["desde"], data["hasta"] = start.isoformat(), end.isoformat()
     return data
+
+
+# ---------------------------------------------------------------- /añadir y /quitar
+
+NOTICIA_SCHEMA = ENTREGA["input_schema"]["properties"]["noticias"]["items"]
+
+ENTREGA_NOTICIA = {
+    "name": "entregar_noticia",
+    "description": "Entrega UNA noticia verificada, o indica que no se ha podido confirmar.",
+    "input_schema": {
+        "type": "object",
+        "properties": {
+            "encontrada": {"type": "boolean", "description": "false si no has podido confirmar la noticia en fuentes fiables"},
+            "motivo": {"type": "string", "description": "si encontrada=false, explica en una frase por qué"},
+            "noticia": NOTICIA_SCHEMA,
+        },
+        "required": ["encontrada"],
+    },
+}
+
+ENTREGA_TEXTOS = {
+    "name": "entregar_textos",
+    "description": "Entrega los textos de la publicación actualizados.",
+    "input_schema": {
+        "type": "object",
+        "properties": {
+            "titular_portada": {"type": "string"},
+            "caption_instagram": {"type": "string"},
+            "caption_tiktok": {"type": "string"},
+            "titulo_tiktok": {"type": "string"},
+        },
+        "required": ["titular_portada", "caption_instagram", "caption_tiktok", "titulo_tiktok"],
+    },
+}
+
+
+def fetch_single_news(start: date, end: date, peticion: str) -> dict:
+    """Busca y redacta una sola noticia. Lanza ValueError si no se puede confirmar."""
+    client = anthropic.Anthropic(api_key=config.env("ANTHROPIC_API_KEY"))
+    hoy = datetime.now(ZoneInfo(config.TIMEZONE)).date()
+    prompt = f"""El editor quiere añadir UNA noticia al resumen de la semana del {start.isoformat()} al {end.isoformat()} (hoy es {hoy.isoformat()}; si es una noticia de última hora del fin de semana o de hoy, también vale).
+
+Lo que pide: {peticion}
+
+Búscala en la web, verifica cada dato (nombres, resultados, fechas) y redáctala con el mismo estilo y los mismos límites que el resto: titular de máx. 70 caracteres, resumen de 1-3 frases y máx. 260 caracteres, fecha, URL de la fuente y el campo imagen (producto con web oficial de la marca, persona con máx. 2 nombres completos, o ninguna). Si piden una lista (por ejemplo, parejas), resume los nombres en el resumen sin pasarte del límite.
+
+Entrega el resultado con la herramienta entregar_noticia. Si no puedes confirmarla en fuentes fiables, entrégala con encontrada=false y el motivo."""
+    messages = [{"role": "user", "content": prompt}]
+    tools = [{"type": "web_search_20250305", "name": "web_search", "max_uses": 8}, ENTREGA_NOTICIA]
+    for _ in range(5):
+        response = client.messages.create(
+            model=config.CLAUDE_MODEL, max_tokens=4000, system=SYSTEM_PROMPT, messages=messages, tools=tools,
+        )
+        if response.stop_reason != "pause_turn":
+            break
+        messages = messages + [{"role": "assistant", "content": response.content}]
+
+    data = next((dict(b.input) for b in response.content if b.type == "tool_use" and b.name == ENTREGA_NOTICIA["name"]), None)
+    if data is None:
+        text = "".join(b.text for b in response.content if b.type == "text")
+        forced = client.messages.create(
+            model=config.CLAUDE_MODEL, max_tokens=4000, tools=[ENTREGA_NOTICIA],
+            tool_choice={"type": "tool", "name": ENTREGA_NOTICIA["name"]},
+            messages=[{"role": "user", "content": "Entrega esto con la herramienta entregar_noticia, sin cambiar el contenido:\n\n" + text}],
+        )
+        data = next((dict(b.input) for b in forced.content if b.type == "tool_use"), {})
+    if not data.get("encontrada") or not (data.get("noticia") or {}).get("titulo"):
+        raise ValueError(data.get("motivo") or "No he podido confirmar esa noticia en fuentes fiables.")
+    return data["noticia"]
+
+
+def rewrite_texts(draft: dict) -> dict:
+    """Reescribe portada y textos de redes para que cuadren con las noticias actuales (sin buscar en la web)."""
+    client = anthropic.Anthropic(api_key=config.env("ANTHROPIC_API_KEY"))
+    resumen = "\n".join(f"- [{n['categoria']}] {n['titulo']}: {n['resumen']}" for n in draft["noticias"])
+    prompt = f"""Estas son, en orden, las noticias definitivas del resumen de Lunes de Pádel de la semana {draft['semana']}:
+
+{resumen}
+
+Textos actuales (escritos para una versión anterior de la lista):
+PORTADA: {draft.get('titular_portada', '')}
+INSTAGRAM: {draft.get('caption_instagram', '')}
+TIKTOK: {draft.get('caption_tiktok', '')}
+
+Reescríbelos para que reflejen exactamente estas noticias y en este orden, manteniendo el mismo estilo, tono y longitud: portada (máx. 60 caracteres), Instagram (gancho, una viñeta con emoji por noticia, pregunta final; máx. 1800 caracteres, sin hashtags), TikTok (máx. 900 caracteres, sin hashtags) y título de TikTok (máx. 80 caracteres). No añadas datos que no estén en la lista. Entrégalos con la herramienta entregar_textos."""
+    response = client.messages.create(
+        model=config.CLAUDE_MODEL, max_tokens=4000, system=SYSTEM_PROMPT, tools=[ENTREGA_TEXTOS],
+        tool_choice={"type": "tool", "name": ENTREGA_TEXTOS["name"]},
+        messages=[{"role": "user", "content": prompt}],
+    )
+    return next(dict(b.input) for b in response.content if b.type == "tool_use")
