@@ -76,6 +76,12 @@ Cuando termines de buscar, entrega el resultado llamando a la herramienta `entre
 
 Ordena "noticias" de más a menos relevante.
 
+Sobre "formato" (las diapositivas deben ser visuales, no un bloque de texto):
+- "resultado": finales y partidos decisivos. Rellena "resultados" con hasta 2 partidos (p. ej. final masculina y final femenina): "ronda" (p. ej. «Final masculina»), "ganadores" y "perdedores" como «Apellido / Apellido» y "marcador" como «6-1 6-4». Añade una "entradilla" de máx. 110 caracteres con el dato clave (p. ej. «7.º título de 2026 para Raquel»).
+- "lista": cuando la noticia es una relación de nombres (parejas que superan la previa, cabezas de serie, convocados, nuevas palas de una colección…). Rellena "grupos" con 1 o 2 grupos («Ellos» / «Ellas», «Masculino» / «Femenino»…), cada uno con máx. 5 elementos cortos (máx. 26 caracteres, p. ej. «Fonteny / Moragues»); si solo hay un grupo, hasta 10 elementos. Añade una "entradilla" de máx. 110 caracteres.
+- "texto": el resto de noticias, con el resumen normal.
+En todos los casos rellena también "resumen", que se usa en los textos de redes.
+
 Sobre "imagen" (cada diapositiva lleva un recorte real relacionado con la noticia):
 - "producto": lanzamientos de palas, zapatillas o material. Solo si encuentras la página oficial de la marca (su web, no un medio ni una tienda). Si no la encuentras, usa "ninguna".
 - "persona": noticias protagonizadas claramente por una persona (retirada, cambio de entrenador, lesión) o por una pareja (campeones de un torneo, nueva pareja). Máximo 2 nombres completos, sin ambigüedad.
@@ -104,6 +110,32 @@ ENTREGA = {
                         "resumen": {"type": "string"},
                         "fecha": {"type": "string"},
                         "fuente": {"type": "string"},
+                        "formato": {"type": "string", "enum": ["texto", "resultado", "lista"]},
+                        "entradilla": {"type": "string"},
+                        "resultados": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "ronda": {"type": "string"},
+                                    "ganadores": {"type": "string"},
+                                    "perdedores": {"type": "string"},
+                                    "marcador": {"type": "string"},
+                                },
+                                "required": ["ganadores", "perdedores", "marcador"],
+                            },
+                        },
+                        "grupos": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "titulo": {"type": "string"},
+                                    "elementos": {"type": "array", "items": {"type": "string"}},
+                                },
+                                "required": ["titulo", "elementos"],
+                            },
+                        },
                         "imagen": {
                             "type": "object",
                             "properties": {
@@ -248,7 +280,7 @@ def fetch_single_news(start: date, end: date, peticion: str) -> dict:
 
 Lo que pide: {peticion}
 
-Búscala en la web, verifica cada dato (nombres, resultados, fechas) y redáctala con el mismo estilo y los mismos límites que el resto: titular de máx. 70 caracteres, resumen de 1-3 frases y máx. 260 caracteres, fecha, URL de la fuente y el campo imagen (producto con web oficial de la marca, persona con máx. 2 nombres completos, o ninguna). Si piden una lista (por ejemplo, parejas), resume los nombres en el resumen sin pasarte del límite.
+Búscala en la web, verifica cada dato (nombres, resultados, fechas) y redáctala con el mismo estilo y los mismos límites que el resto: titular de máx. 70 caracteres, resumen de 1-3 frases y máx. 260 caracteres, fecha, URL de la fuente y el campo imagen (producto con web oficial de la marca, persona con máx. 2 nombres completos, o ninguna). Elige también el "formato" con las mismas reglas que el resto del resumen: "resultado" para finales y partidos (con "resultados" y "entradilla"), "lista" si es una relación de nombres como parejas o convocados (con "grupos" de máx. 5 elementos cortos, «Ellos» / «Ellas» si aplica, y "entradilla"), o "texto". Rellena siempre "resumen" igualmente.
 
 Entrega el resultado con la herramienta entregar_noticia. Si no puedes confirmarla en fuentes fiables, entrégala con encontrada=false y el motivo."""
     messages = [{"role": "user", "content": prompt}]
