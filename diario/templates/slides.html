@@ -83,6 +83,39 @@
   .noticia .resumen.largo { font-size: 35px; }
   .noticia .fecha { position: absolute; left: 132px; bottom: 112px; font-size: 28px; color: var(--azul-cristal); }
 
+  /* ----- Formatos visuales bajo la línea de saque ----- */
+  .noticia .entradilla { margin-top: 28px; font-size: 34px; line-height: 1.25; font-weight: 600; color: var(--azul-cristal); max-width: 22ch; }
+  .noticia.con-foto .entradilla { max-width: 430px; font-size: 30px; }
+  .bajo-linea { position: absolute; left: 132px; right: 132px; top: calc(56px + 1238px * .64 + 40px); }
+  /* marcador: como el de la pista */
+  .marcador .partido { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 28px; padding: 16px 0; }
+  .marcador .partido + .partido { border-top: 3px solid rgba(244, 246, 248, .22); }
+  .marcador p { margin: 0; }
+  .marcador .ronda { font-size: 24px; font-weight: 600; color: var(--azul-cristal); margin-bottom: 4px; }
+  .marcador .ganan { font-size: 38px; font-weight: 600; line-height: 1.12; }
+  .marcador .pierden { font-size: 28px; line-height: 1.2; color: var(--azul-cristal); margin-top: 2px; }
+  .marcador .tanteo { display: flex; gap: 10px; }
+  .marcador .tanteo span {
+    min-width: 76px; text-align: center; padding: 6px 10px 8px; border-radius: 12px;
+    background: var(--negro); color: var(--bola);
+    font-family: var(--display); font-weight: 900; font-stretch: 112%; font-size: 46px; line-height: 1;
+  }
+  /* lista: dos columnas de nombres */
+  .lista { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 52px; }
+  .lista h3 { margin: 0 0 6px; font-family: var(--display); font-weight: 800; font-stretch: 112%; font-size: 30px; color: var(--bola); }
+  .lista ol { margin: 0; padding: 0; list-style: none; counter-reset: n; }
+  .lista li {
+    counter-increment: n; display: flex; align-items: baseline; gap: 14px;
+    font-size: 30px; font-weight: 600; line-height: 1.2; padding: 8px 0;
+    border-top: 2px solid rgba(244, 246, 248, .2);
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .lista li::before { /* una bola pequeña: los números sugerirían un orden que no siempre existe */
+    content: ""; flex: none; width: 16px; height: 16px; border-radius: 50%; background: var(--bola); transform: translateY(-3px);
+  }
+  .lista.una { display: block; }
+  .lista.una ol { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 52px; }
+
   /* ----- Noticia con foto: la figura "pisa" la línea de saque ----- */
   .noticia.con-foto h2 { font-size: 72px; max-width: 430px; }
   .noticia.con-foto h2.largo { font-size: 58px; max-width: 430px; }
@@ -144,8 +177,34 @@
     <img class="marca" src="{{ logo_uri }}" alt="Lunes de Pádel">
     <span class="categoria">{{ n.categoria }}</span>
     <h2 class="{{ 'largo' if n.titulo|length > (28 if n.recortes_uri else 38) or (n.titulo.split()|map('length')|max) > 9 else '' }}">{{ n.titulo }}</h2>
+    {% if n.formato in ('resultado', 'lista') and n.entradilla %}<p class="entradilla">{{ n.entradilla }}</p>{% endif %}
   </div>
+  {% if n.formato == 'resultado' and n.resultados %}
+  <div class="bajo-linea marcador">
+    {% for r in n.resultados[:2] %}
+    <div class="partido">
+      <div class="nombres">
+        {% if r.ronda %}<p class="ronda">{{ r.ronda }}</p>{% endif %}
+        <p class="ganan">{{ r.ganadores }}</p>
+        <p class="pierden">a {{ r.perdedores }}</p>
+      </div>
+      <p class="tanteo">{% for set in r.marcador.replace(',', ' ').split() %}<span>{{ set }}</span>{% endfor %}</p>
+    </div>
+    {% endfor %}
+  </div>
+  {% elif n.formato == 'lista' and n.grupos %}
+  {% set grupos = n.grupos[:2] %}
+  <div class="bajo-linea lista{{ ' una' if grupos|length == 1 else '' }}">
+    {% for g in grupos %}
+    <div class="grupo">
+      <h3>{{ g.titulo }}</h3>
+      <ol>{% for e in g.elementos[:(10 if grupos|length == 1 else 5)] %}<li>{{ e }}</li>{% endfor %}</ol>
+    </div>
+    {% endfor %}
+  </div>
+  {% else %}
   <p class="resumen {{ 'largo' if n.resumen|length > 190 else '' }}">{{ n.resumen }}</p>
+  {% endif %}
   {% if n.fecha_bonita %}<p class="fecha">{{ n.fecha_bonita }}</p>{% endif %}
   {% if n.recortes_uri and n.credito %}<p class="credito">{{ n.credito }}</p>{% endif %}
 </section>
