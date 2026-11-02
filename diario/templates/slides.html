@@ -83,6 +83,20 @@
   .noticia .resumen.largo { font-size: 35px; }
   .noticia .fecha { position: absolute; left: 132px; bottom: 112px; font-size: 28px; color: var(--azul-cristal); }
 
+  /* ----- Noticia con foto a sangre en la mitad superior ----- */
+  .fondo {
+    position: absolute; left: 0; top: 0; width: 1080px; height: calc(56px + 1238px * .64 + 3px);
+    background-size: cover; background-position: center 30%; z-index: 0;
+  }
+  .fondo::after { /* oscurece arriba para el logo y funde con el azul en la línea de saque */
+    content: ""; position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(6, 22, 52, .68) 0%, rgba(6, 22, 52, 0) 24%, rgba(10, 34, 74, .12) 48%, rgba(18, 58, 120, .78) 78%, var(--azul-pista) 100%);
+  }
+  .pista { z-index: 1; }
+  .noticia.con-fondo .contenido { bottom: calc(1350px - (56px + 1238px * .64) + 36px); }
+  .noticia.con-fondo h2 { margin-top: auto; text-shadow: 0 4px 24px rgba(0, 10, 30, .55); }
+  .noticia.con-fondo .entradilla { color: var(--cal); text-shadow: 0 2px 12px rgba(0, 10, 30, .6); }
+
   /* ----- Formatos visuales bajo la línea de saque ----- */
   .noticia .entradilla { margin-top: 28px; font-size: 34px; line-height: 1.25; font-weight: 600; color: var(--azul-cristal); max-width: 22ch; }
   .noticia.con-foto .entradilla { max-width: 430px; font-size: 30px; }
@@ -166,7 +180,8 @@
 </section>
 
 {% for n in noticias %}
-<section class="slide noticia{{ ' con-foto' if n.recortes_uri else '' }}">
+<section class="slide noticia{{ ' con-foto' if n.recortes_uri else (' con-fondo' if n.fondo_uri else '') }}">
+  {% if n.fondo_uri and not n.recortes_uri %}<div class="fondo" style="background-image: url('{{ n.fondo_uri }}')"></div>{% endif %}
   <div class="pista"></div>
   {% if n.recortes_uri %}
   <div class="figura{{ ' doble' if n.recortes_uri|length > 1 else '' }}{{ ' entera' if n.foto_entera else '' }}">
@@ -206,7 +221,7 @@
   <p class="resumen {{ 'largo' if n.resumen|length > 190 else '' }}">{{ n.resumen }}</p>
   {% endif %}
   {% if n.fecha_bonita %}<p class="fecha">{{ n.fecha_bonita }}</p>{% endif %}
-  {% if n.recortes_uri and n.credito %}<p class="credito">{{ n.credito }}</p>{% endif %}
+  {% if (n.recortes_uri or n.fondo_uri) and n.credito %}<p class="credito">{{ n.credito }}</p>{% endif %}
 </section>
 {% endfor %}
 
