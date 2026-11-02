@@ -1,9 +1,10 @@
 """Imágenes reales para cada noticia, recortadas sin fondo.
 
-Fuentes (por orden de seguridad legal):
-  - Personas: Wikimedia Commons (licencias libres; se muestra autor y licencia en la diapositiva).
-  - Productos: la imagen principal (og:image) de la web oficial de la marca.
-  - Tus propias fotos, enviadas al bot de Telegram con /foto N.
+Orden de preferencia para cada noticia:
+  1. La foto de la propia noticia (og:image de la fuente): recortada si es una persona o un
+     producto y el recorte sale limpio; si no, a sangre como fondo de la mitad superior.
+  2. Si la fuente no tiene foto: personas de Wikimedia Commons y productos de la web de la marca.
+  3. Tus propias fotos, enviadas al bot de Telegram con /foto N.
 El fondo se quita con rembg, que funciona en local, gratis.
 """
 import html
@@ -28,7 +29,7 @@ _session = None
 
 # ---------------------------------------------------------------- recorte
 
-def cutout(raw: bytes) -> Image.Image:
+def cutout(raw: bytes, min_cov: float = 0.03, max_cov: float = 0.97) -> Image.Image:
     """Quita el fondo y recorta al contorno. Lanza ValueError si el recorte sale mal."""
     global _session
     from rembg import new_session, remove  # import aquí: el modelo pesa y solo se carga si hace falta
@@ -41,7 +42,7 @@ def cutout(raw: bytes) -> Image.Image:
 
     alpha = out.getchannel("A")
     coverage = sum(alpha.histogram()[129:]) / (out.width * out.height)
-    if not 0.03 < coverage < 0.97:
+    if not min_cov < coverage < max_cov:
         raise ValueError("el recorte no ha detectado bien la figura")
     bbox = alpha.point(lambda a: 255 if a > 20 else 0).getbbox()
     out = out.crop(bbox)
@@ -120,34 +121,89 @@ def commons_person(name: str) -> tuple[bytes, str] | None:
     return None
 
 
-def official_product(page_url: str) -> tuple[bytes, str] | None:
-    """Toma la imagen principal (og:image) de la página oficial de la marca."""
+def _og_image(page_url: str) -> str | None:
+    """URL de la imagen principal de una página (og:image o twitter:image)."""
     r = requests.get(page_url, headers=HEADERS, timeout=30)
     r.raise_for_status()
-    for prop in ("og:image", "twitter:image"):
+    for prop in ("og:image", "og:image:url", "twitter:image"):
         m = re.search(
             rf'<meta[^>]+(?:property|name)=["\']{prop}["\'][^>]+content=["\']([^"\']+)'
             rf'|<meta[^>]+content=["\']([^"\']+)["\'][^>]+(?:property|name)=["\']{prop}["\']',
             r.text, re.I,
         )
         if m:
-            image_url = urljoin(page_url, html.unescape(m.group(1) or m.group(2)))
-            return _download(image_url), f"Imagen: {urlparse(page_url).netloc.removeprefix('www.')}"
+            return urljoin(page_url, html.unescape(m.group(1) or m.group(2)))
     return None
+
+
+def _dominio(url: str) -> str:
+    return urlparse(url).netloc.removeprefix("www.")
+
+
+def official_product(page_url: str) -> tuple[bytes, str] | None:
+    """Toma la imagen principal (og:image) de la página oficial de la marca."""
+    image_url = _og_image(page_url)
+    return (_download(image_url), f"Imagen: {_dominio(page_url)}") if image_url else None
+
+
+SIN_FOTO = ("logo", "default", "placeholder", "favicon", "share-image", "og-default", "avatar")
+
+
+def article_photo(fuente: str) -> tuple[bytes, str] | None:
+    """La foto de la propia noticia: la imagen principal de la página de la fuente."""
+    for url in re.findall(r"https?://[^\s|,]+", fuente or ""):
+        try:
+            image_url = _og_image(url)
+            if not image_url or any(w in image_url.lower() for w in SIN_FOTO):
+                continue
+            raw = _download(image_url)
+            with Image.open(io.BytesIO(raw)) as im:
+                w, h = im.size
+            # fuera logos, banners estrechos y miniaturas
+            if w < 600 or not 0.5 < w / h < 2.4:
+                continue
+            return raw, f"Foto: {_dominio(url)}"
+        except Exception:  # noqa: BLE001
+            continue
+    return None
+
+
+def save_fondo(raw: bytes, path: Path) -> str:
+    """Guarda una foto para usarla a sangre en la mitad superior de la diapositiva."""
+    path.parent.mkdir(parents=True, exist_ok=True)
+    img = Image.open(io.BytesIO(raw)).convert("RGB")
+    img.thumbnail((1600, 1600))
+    img.save(path, "JPEG", quality=86, optimize=True)
+    return path.relative_to(config.ROOT / "docs").as_posix()
 
 
 # ---------------------------------------------------------------- por noticia
 
 def prepare_images(noticias: list[dict], folder: Path) -> None:
-    """Rellena en cada noticia 'recortes' (rutas dentro de docs/), 'credito' e 'imagen_estado'."""
+    """Rellena en cada noticia 'recortes' o 'fondo' (rutas dentro de docs/), 'credito' e 'imagen_estado'."""
     for i, n in enumerate(noticias, start=1):
         n.setdefault("recortes", [])
-        if n["recortes"]:  # ya tiene imagen (p. ej. una foto tuya de una versión anterior)
+        if n["recortes"] or n.get("fondo"):  # ya tiene imagen (p. ej. una foto tuya de una versión anterior)
             continue
         info = n.get("imagen") or {}
         tipo = info.get("tipo", "ninguna")
         try:
-            if tipo == "persona":
+            # 1. la foto de la propia noticia
+            found = article_photo(n.get("fuente", ""))
+            if found:
+                raw, n["credito"] = found
+                recortada = False
+                if tipo in ("persona", "producto"):
+                    try:  # en una foto de noticia solo vale un recorte limpio de la figura principal
+                        n["recortes"] = [save_cutout(cutout(raw, 0.06, 0.65), folder / "recortes" / f"n{i:02d}_0.png")]
+                        recortada = True
+                    except Exception:  # noqa: BLE001
+                        pass
+                if not recortada:
+                    n["fondo"] = save_fondo(raw, folder / "fondos" / f"n{i:02d}.jpg")
+
+            # 2. sin foto en la fuente: Wikimedia para personas, web de la marca para productos
+            elif tipo == "persona":
                 credits = []
                 for j, name in enumerate((info.get("personas") or [])[:2]):
                     found = commons_person(name)
@@ -164,15 +220,21 @@ def prepare_images(noticias: list[dict], folder: Path) -> None:
                     n["recortes"].append(save_cutout(cutout(raw), folder / "recortes" / f"n{i:02d}_0.png"))
         except Exception as exc:  # noqa: BLE001 - una imagen fallida nunca debe parar el post
             print(f"⚠️ Imagen de la noticia {i} descartada: {exc}")
-            n["recortes"] = []
-        n["imagen_estado"] = "con foto" if n["recortes"] else "solo texto"
+            n["recortes"], n["fondo"] = [], None
+        if n["recortes"]:
+            n["imagen_estado"] = "recorte"
+        elif n.get("fondo"):
+            n["imagen_estado"] = "foto de fondo"
+        else:
+            n["imagen_estado"] = "solo texto"
 
 
 def from_user_photo(raw: bytes, path: Path) -> tuple[str, bool]:
-    """Foto enviada por ti a Telegram. Devuelve (ruta, recortada). Si el recorte falla, se usa la foto entera."""
+    """Foto enviada por ti a Telegram. Devuelve (ruta, recortada).
+
+    Si el recorte no sale limpio, la foto se usa entera como fondo de la mitad superior.
+    """
     try:
-        return save_cutout(cutout(raw), path), True
+        return save_cutout(cutout(raw, 0.06, 0.8), path), True
     except Exception:  # noqa: BLE001
-        img = Image.open(io.BytesIO(raw)).convert("RGB")
-        img.thumbnail((1100, 1100))
-        return save_cutout(img, path), False
+        return save_fondo(raw, path.with_suffix(".jpg")), False

@@ -49,7 +49,7 @@ Cubre, en este orden de prioridad:
 7. Ranking: cambios relevantes en los primeros puestos del ranking FIP.
 8. Otros: lesiones importantes, calendario, normativa, acuerdos o fichajes de patrocinio con repercusión.
 
-Haz varias búsquedas, en español y en inglés, y verifica las fechas. Selecciona como máximo las {config.MAX_NEWS} noticias más relevantes. Si una categoría no tiene novedades, simplemente omítela.
+Haz varias búsquedas, en español y en inglés, y verifica las fechas. Entrega EXACTAMENTE {config.MAX_NEWS} noticias: el carrusel tiene siempre {config.MAX_NEWS} diapositivas de noticias. Si las categorías principales no dan para tanto, completa con noticias menores pero verificadas de esa semana (torneos FIP Silver, Bronze o Promises, campeonatos nacionales, lesiones, calendario, fichajes de patrocinio, jugadores jóvenes que destacan, récords o curiosidades). Si una categoría no tiene novedades, omítela. Para cada noticia, usa como "fuente" una página que tenga foto de la noticia (crónica o nota de prensa) siempre que sea posible.
 
 Cuando termines de buscar, entrega el resultado llamando a la herramienta `entregar_borrador` (no lo escribas como texto). Estos son sus campos:
 {{

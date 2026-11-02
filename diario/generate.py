@@ -21,6 +21,11 @@ def generate(feedback: str | None = None, week: tuple | None = None) -> None:
         telegram.send_text(f"⚠️ No pude preparar el borrador de la semana {start} – {end}.\n\nError: {exc}\n\nPuedes reintentarlo con /generar")
         raise
 
+    if len(data["noticias"]) < config.MAX_NEWS:
+        telegram.send_text(
+            f"ℹ️ Esta semana Claude solo ha podido confirmar {len(data['noticias'])} noticias de {config.MAX_NEWS}. "
+            "Puedes completar con /añadir <qué noticia>."
+        )
     folder = _new_folder(end.isoformat())
     prepare_images(data["noticias"], config.POSTS_DIR / folder)
     _render_and_send(st, data, folder)

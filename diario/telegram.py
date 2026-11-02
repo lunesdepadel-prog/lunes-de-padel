@@ -51,7 +51,9 @@ def download_file(file_id: str) -> bytes:
 
 def _linea_noticia(slide: int, n: dict) -> str:
     if n.get("recortes"):
-        foto = f"📸 con foto ({n.get('credito') or 'sin crédito'})"
+        foto = f"📸 recorte ({n.get('credito') or 'sin crédito'})"
+    elif n.get("fondo"):
+        foto = f"🖼️ foto de fondo ({n.get('credito') or 'sin crédito'})"
     else:
         foto = "🔤 solo texto"
     return f"Diapositiva {slide}: {n['titulo']}\n  {foto}\n  Fuente: {n.get('fuente', 'sin fuente')}"

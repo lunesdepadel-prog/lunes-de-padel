@@ -31,6 +31,7 @@ def render_slides(data: dict, out_dir: Path) -> list[Path]:
             **n,
             "fecha_bonita": _fecha_bonita(n.get("fecha")),
             "recortes_uri": [(docs / r).as_uri() for r in n.get("recortes", []) if (docs / r).exists()],
+            "fondo_uri": (docs / n["fondo"]).as_uri() if n.get("fondo") and (docs / n["fondo"]).exists() else None,
         }
         for n in data["noticias"]
     ]

@@ -100,7 +100,7 @@ def handle_edits(cmds: list[tuple[str, dict]]) -> None:
         n = noticias[index]
 
         if cmd == "/sinfoto":
-            n.update(recortes=[], credito="", foto_entera=False)
+            n.update(recortes=[], fondo=None, credito="", foto_entera=False)
             changed = True
             continue
 
@@ -119,9 +119,11 @@ def handle_edits(cmds: list[tuple[str, dict]]) -> None:
         path = config.POSTS_DIR / "fotos-propias" / f"{draft['hasta']}_{msg.get('message_id', 0)}.png"
         rel, recortada = from_user_photo(raw, path)
         credito = (arg.strip().split(maxsplit=1)[1:] or [""])[0]  # texto opcional tras el número: crédito
-        n.update(recortes=[rel], credito=credito, foto_entera=not recortada)
-        if not recortada:
-            telegram.send_text("No pude quitarle el fondo, así que la pongo entera con marco.")
+        if recortada:
+            n.update(recortes=[rel], fondo=None, credito=credito, foto_entera=False)
+        else:
+            n.update(recortes=[], fondo=rel, credito=credito, foto_entera=False)
+            telegram.send_text("No pude recortarla limpia, así que la pongo a sangre en la parte de arriba.")
         changed = True
 
     if changed:
