@@ -2,51 +2,109 @@
   "status": "pending",
   "telegram_offset": 527771931,
   "draft": {
-    "titular_portada": "Galán KO en Kuwait y nuevos campeones en Melilla",
+    "titular_portada": "Coello y Tapia, reyes de Kuwait y del 2026",
     "noticias": [
       {
         "categoria": "Torneos",
-        "titulo": "Bautista-Bergamini y Eugenio-Caldera ganan el FIP Gold Melilla",
-        "resumen": "Jairo Bautista y Lucas Bergamini ganaron la final 6-1 6-4 a Tello y Arce. En chicas, Raquel Eugenio y Bea Caldera vencieron 6-3 6-4 a Fassio y Virseda. Es el 7º título de 2026 para Raquel.",
-        "fecha": "2026-10-24",
-        "fuente": "https://www.padelfip.com/2026/10/melilla-bautista-bergamini-and-eugenio-caldera-triumph-seventh-title-of-2026-for-raquel/",
+        "titulo": "Coello/Tapia y Brea/Triay se coronan en el Kuwait Major",
+        "resumen": "Coello y Tapia arrasaron a Tello y Arce en 56 minutos. Brea y Triay remontaron a Sánchez y Ustero en la final femenina y se llevan el Major de Kuwait.",
+        "fecha": "2026-10-31",
+        "fuente": "https://timeskuwait.com/coello-tapia-triay-and-brea-crowned-champions-at-premier-padel-kuwait/",
+        "formato": "resultado",
+        "entradilla": "13.º título de 2026 para Coello/Tapia y 7.º para Brea/Triay",
+        "resultados": [
+          {
+            "ronda": "Final masculina",
+            "ganadores": "Coello / Tapia",
+            "perdedores": "Tello / Arce",
+            "marcador": "6-1 6-1"
+          },
+          {
+            "ronda": "Final femenina",
+            "ganadores": "Brea / Triay",
+            "perdedores": "Sánchez / Ustero",
+            "marcador": "3-6 6-1 6-1"
+          }
+        ],
         "imagen": {
           "tipo": "persona",
           "personas": [
-            "Jairo Bautista",
-            "Lucas Bergamini"
-          ],
-          "pagina": ""
+            "Arturo Coello",
+            "Agustín Tapia"
+          ]
+        },
+        "recortes": [
+          "posts/2026-11-01_20261102-075950/recortes/n01_0.png",
+          "posts/2026-11-01_20261102-075950/recortes/n01_1.png"
+        ],
+        "credito": "Foto: Hombrey (CC0, Wikimedia) / Foto: Daniel Luque Jiménez (CC BY-SA 4.0, Wikimedia)",
+        "imagen_estado": "con foto"
+      },
+      {
+        "categoria": "Ranking",
+        "titulo": "Coello y Tapia, matemáticamente n.º 1 por cuarto año seguido",
+        "resumen": "Con los 2.000 puntos del Kuwait Major, Coello y Tapia aseguran el número uno de final de 2026. Galán y Chingotto ya no pueden alcanzarles ni ganando los tres torneos que quedan.",
+        "fecha": "2026-10-31",
+        "fuente": "https://vibrandopadel.com/coello-y-tapia-ganan-el-kuwait-major-y-sellan-el-numero-uno-por-cuarto-ano-consecutivo/",
+        "formato": "texto",
+        "imagen": {
+          "tipo": "persona",
+          "personas": [
+            "Arturo Coello",
+            "Agustín Tapia"
+          ]
+        },
+        "recortes": [
+          "posts/2026-11-01_20261102-075950/recortes/n02_0.png",
+          "posts/2026-11-01_20261102-075950/recortes/n02_1.png"
+        ],
+        "credito": "Foto: Hombrey (CC0, Wikimedia) / Foto: Daniel Luque Jiménez (CC BY-SA 4.0, Wikimedia)",
+        "imagen_estado": "con foto"
+      },
+      {
+        "categoria": "Otros",
+        "titulo": "Galán, lesionado, se pierde el Mundial de Doha",
+        "resumen": "Una lesión en la mano derecha ya le había apartado del Kuwait Major. La FEP confirma su baja para el Mundial de selecciones (Doha, 2-7 nov) y Javi Leal le sustituye.",
+        "fecha": "2026-10-30",
+        "fuente": "https://www.infobae.com/espana/agencias/2026/10/30/ale-galan-no-jugara-el-mundial-de-padel-por-lesion/",
+        "formato": "texto",
+        "imagen": {
+          "tipo": "persona",
+          "personas": [
+            "Alejandro Galán Romo"
+          ]
+        },
+        "recortes": [
+          "posts/2026-11-01_20261102-075950/recortes/n03_0.png"
+        ],
+        "credito": "Foto: Barcex (CC BY-SA 4.0, Wikimedia)",
+        "imagen_estado": "con foto"
+      },
+      {
+        "categoria": "Otros",
+        "titulo": "Gemma Triay, la jugadora más laureada de la historia",
+        "resumen": "Con el Kuwait Major, Gemma Triay suma su título n.º 59 y supera a Ari Sánchez y Ale Salazar, con las que estaba empatada a 58. Es el 7.º título de 2026 con Delfi Brea.",
+        "fecha": "2026-10-31",
+        "fuente": "https://www.padeladdict.com/coello-y-tapia-numero-1-por-cuarto-ano-y-gemma-triay-la-mas-laureada-de-la-historia/",
+        "formato": "texto",
+        "imagen": {
+          "tipo": "persona",
+          "personas": [
+            "Gemma Triay",
+            "Delfina Brea"
+          ]
         },
         "recortes": [],
         "credito": "",
         "imagen_estado": "solo texto"
       },
       {
-        "categoria": "Otros",
-        "titulo": "Galán y Chingotto, baja en el Kuwait Major por lesión",
-        "resumen": "Ale Galán se ha lesionado y la pareja número 2 no debutará en el Major de Kuwait, donde el campeón se lleva 2.000 puntos. Se complican mucho sus opciones de pelear por el número 1.",
-        "fecha": "2026-10-24",
-        "fuente": "https://www.elneverazo.com/ale-galan-y-fede-chingotto-no-disputaran-el-kuwait-major-premier-padel/",
-        "imagen": {
-          "tipo": "persona",
-          "personas": [
-            "Alejandro Galán Romo"
-          ],
-          "pagina": ""
-        },
-        "recortes": [
-          "posts/2026-10-25_20261026-073008/recortes/n02_0.png"
-        ],
-        "credito": "Foto: Barcex (CC BY-SA 4.0, Wikimedia)",
-        "imagen_estado": "con foto"
-      },
-      {
-        "categoria": "Torneos",
-        "titulo": "Kuwait Major: las 8 parejas que superan la previa y van al cuadro",
-        "resumen": "Cuatro parejas por cuadro superan la previa. Ellos: Fonteny/Moragues, Leygue/Moya, Ortega/Axelsson y Belluati/Abud. Ellas: Ortiz/Ferreyra, Dubins/Luttikhuis, Carrascosa/Fernández y Bahurel/Val.",
-        "fecha": "2026-10-25",
-        "fuente": "https://www.padelfip.com/events/kuwait-major-2026/ | https://www.padelspain.net/padel-profesional/835261/cuatro-parejas-sellan-su-pase-al-cuadro-principal-tras-una-previa-llena-de-sorpresas/",
+        "categoria": "Selecciones",
+        "titulo": "Australia vuelve al Mundial de pádel ocho años después",
+        "resumen": "Australia remontó a Egipto en la final del clasificatorio Asia-África en Kuwait y se llevó la última plaza masculina para la FIP World Cup de Doha (2-7 de noviembre).",
+        "fecha": "2026-10-30",
+        "fuente": "https://www.padelfip.com/2026/10/australia-celebrate-world-cup-return-comeback-triumph-against-egypt-the-next-destination-is-doha/",
+        "formato": "texto",
         "imagen": {
           "tipo": "ninguna"
         },
@@ -54,106 +112,49 @@
         "imagen_estado": "solo texto"
       },
       {
-        "categoria": "Ranking",
-        "titulo": "Coello y Tapia, a un paso de cerrar el número 1 de 2026",
-        "resumen": "Con la baja de Galán y Chingotto, Padel Spain da por zanjada la lucha: Coello y Tapia serían números 1 por tercera temporada seguida. Padel Addict matiza que les basta con ganar el Major de Kuwait.",
-        "fecha": "2026-10-25",
-        "fuente": "https://www.padelspain.net/padel-profesional/835242/galan-y-chingotto-se-ausentan-de-kuwait-una-lesion-impide-su-presencia-en-el-torneo/",
-        "imagen": {
-          "tipo": "persona",
-          "personas": [
-            "Arturo Coello",
-            "Agustín Tapia"
-          ],
-          "pagina": ""
-        },
-        "recortes": [
-          "posts/2026-10-25_20261026-073008/recortes/n03_0.png",
-          "posts/2026-10-25_20261026-073008/recortes/n03_1.png"
-        ],
-        "credito": "Foto: Hombrey (CC0, Wikimedia) / Foto: Daniel Luque Jiménez (CC BY-SA 4.0, Wikimedia)",
-        "imagen_estado": "con foto"
-      },
-      {
-        "categoria": "Selecciones",
-        "titulo": "Mundial de Doha: 32 selecciones y 1,2 M€ en premios",
-        "resumen": "El Mundial (2-7 noviembre) reunirá a 16 selecciones masculinas y 16 femeninas, con el mayor bote de la historia del pádel: 1,2 millones. Las dos últimas plazas se deciden en Kuwait del 26 al 30 de octubre.",
-        "fecha": "2026-10-23",
-        "fuente": "https://tennistonic.com/tennis-news/1070638/padel-fip-world-cup-2026-set-to-bring-32-national-teams-to-doha/",
-        "imagen": {
-          "tipo": "ninguna",
-          "personas": [],
-          "pagina": ""
-        },
-        "recortes": [],
-        "imagen_estado": "solo texto"
-      },
-      {
         "categoria": "Torneos",
-        "titulo": "Arranca el Kuwait Major: Tapia-Coello se medirán a Abbate-Dal Bianco",
-        "resumen": "El cuadro final masculino empezó el domingo 25. Rubini y Chozas remontaron un 6-1 inicial a Gala y Jensen. Abbate y Dal Bianco ganaron 6-3 6-1 a Gil y Valenzuela y serán los rivales de los números 1.",
-        "fecha": "2026-10-25",
-        "fuente": "https://www.padeladdict.com/resultados-treintaidosavos-kuwait-major-2026/",
+        "titulo": "Ortiz y Ferreyra ganan el FIP Silver Damac Dubai II",
+        "resumen": "Anna Ortiz y María Laura Ferreyra, cabezas de serie 1, ganaron el título femenino sin perder un set y batieron en la final a Arriola y Ryzhova por 6-2 y 6-1.",
+        "fecha": "2026-10-31",
+        "fuente": "https://www.diaridetarragona.com/deportes/polideportivo/274604/anna-ortiz-conquista-fip-silver-dubai-maria-laura-ferreyra.html",
+        "formato": "resultado",
+        "entradilla": "Segundo título de octubre para Ortiz/Ferreyra tras el Bronze de Rovigo",
+        "resultados": [
+          {
+            "ronda": "Final femenina",
+            "ganadores": "Ortiz / Ferreyra",
+            "perdedores": "Arriola / Ryzhova",
+            "marcador": "6-2 6-1"
+          }
+        ],
         "imagen": {
-          "tipo": "ninguna",
-          "personas": [],
-          "pagina": ""
-        },
-        "recortes": [],
-        "imagen_estado": "solo texto"
-      },
-      {
-        "categoria": "Otros",
-        "titulo": "Tarragona acogerá las Cupra FIP Finals del 3 al 6 de diciembre",
-        "resumen": "La FIP lo confirmó el 22 de octubre: 32 parejas (16 masculinas y 16 femeninas) jugarán en el Palau d'Esports Catalunya, una semana antes de las Premier Padel Finals de Barcelona. Las entradas ya están a la venta.",
-        "fecha": "2026-10-22",
-        "fuente": "https://www.padelfip.com/2026/10/the-cupra-fip-finals-are-coming-to-tarragona-from-3-to-6-december-featuring-top-international-padel-stars/",
-        "imagen": {
-          "tipo": "ninguna",
-          "personas": [],
-          "pagina": ""
-        },
-        "recortes": [],
-        "imagen_estado": "solo texto"
-      },
-      {
-        "categoria": "Material",
-        "titulo": "Siux 2027: 12 palas nuevas y su primera línea de zapatillas",
-        "resumen": "Siux presentó en Madrid su colección 2027: seis familias y doce palas, con Obsidian como nueva familia de control. Por primera vez lanza zapatillas propias, además de textil y accesorios.",
-        "fecha": "2026-10-21",
-        "fuente": "https://www.padeladdict.com/coleccion-siux-2027-universo-completo-padel/",
-        "imagen": {
-          "tipo": "producto",
-          "personas": [],
-          "pagina": "https://www.siuxpadel.com/en/pages/coleccion-2027"
+          "tipo": "ninguna"
         },
         "recortes": [],
         "imagen_estado": "solo texto"
       }
     ],
-    "caption_instagram": "🎾 Semana de campeones nuevos, una baja que sacude la lucha por el número 1 y el Mundial en el horizonte. Así fue el pádel de esta semana 👇\n\n🏆 FIP Gold Melilla: Jairo Bautista y Lucas Bergamini ganaron 6-1 6-4 a Tello y Arce. En chicas, Raquel Eugenio y Bea Caldera se llevaron el título (6-3 6-4 a Fassio y Virseda). ¡7º título de 2026 para Raquel!\n\n🤕 Galán y Chingotto no jugarán el Kuwait Major por una lesión de Ale. Se quedan sin una cita de 2.000 puntos.\n\n👑 Con esa baja, Coello y Tapia ven muy cerca el número 1 de 2026. Padel Spain da la lucha por zanjada y Padel Addict matiza que les vale con ganar en Kuwait.\n\n🌍 Mundial de Doha (2-7 nov): 32 selecciones y 1,2 M€ en premios, récord histórico. Las dos últimas plazas se juegan en Kuwait.\n\n🔥 Kuwait Major en marcha: remontada de Rubini y Chozas, y Abbate/Dal Bianco serán el primer rival de Tapia y Coello.\n\n📍 Las Cupra FIP Finals se jugarán en Tarragona del 3 al 6 de diciembre, con 32 parejas.\n\n👟 Siux presenta su colección 2027: 12 palas nuevas y, por primera vez, zapatillas propias.\n\n¿Quién se lleva Kuwait sin Galán y Chingotto? 👇 ¡Te leemos en comentarios!",
-    "caption_tiktok": "🎾 Resumen de la semana en el pádel: 🏆 Bautista y Bergamini ganan el FIP Gold de Melilla, y Raquel Eugenio y Bea Caldera se llevan el título femenino. 🤕 Galán y Chingotto se caen del Kuwait Major por lesión de Ale. 👑 Coello y Tapia, cerca del número 1 de 2026. 🌍 Mundial de Doha: 32 selecciones y 1,2 M€ en premios. 📍 Las Cupra FIP Finals serán en Tarragona. 👟 Siux presenta su colección 2027 con zapatillas propias. ¿Quién gana en Kuwait? 👇",
-    "titulo_tiktok": "Galán KO en Kuwait, campeones en Melilla y Mundial a la vista",
+    "caption_instagram": "🔥 SEMANA DE KUWAIT: Coello y Tapia no tienen techo y Gemma Triay ya es historia. ¡Repasamos lo mejor del pádel de esta semana!\n\n🏆 Kuwait Major: Coello/Tapia arrasan a Tello/Arce (6-1 6-1) y Brea/Triay remontan a Sánchez/Ustero (3-6 6-1 6-1).\n👑 Coello y Tapia, n.º 1 matemáticos de 2026: cuarto año consecutivo en lo más alto.\n🌟 Gemma Triay suma su título 59 y ya es la jugadora más laureada de la historia.\n🩹 Galán, lesionado en la mano derecha, se pierde el Mundial de Doha. Javi Leal ocupa su plaza en la selección.\n🌏 Australia vuelve al Mundial ocho años después tras remontar a Egipto en el clasificatorio Asia-África.\n🥈 FIP Silver Dubai II: Anna Ortiz y María Laura Ferreyra se llevan el título femenino (6-2 6-1).\n\n🌍 Del 2 al 7 de noviembre, el Mundial de selecciones en Doha.\n\n¿Quién se lleva el Mundial: España o Argentina? 👇 Te leemos en comentarios.",
+    "caption_tiktok": "👑 Coello y Tapia, n.º 1 de 2026 por cuarto año seguido tras arrasar en el Kuwait Major (6-1 6-1). Brea y Triay remontan la final femenina y Gemma ya es la más laureada de la historia con 59 títulos. 🩹 Galán se pierde el Mundial de Doha por lesión y entra Javi Leal. 🌏 Australia vuelve al Mundial tras ocho años. ¿Quién gana el Mundial, España o Argentina? 👇",
+    "titulo_tiktok": "Coello y Tapia, n.º 1 otra vez y Galán, baja para el Mundial",
     "hashtags": [
       "#padel",
-      "#premierpadel",
       "#padelespaña",
-      "#fip",
+      "#premierpadel",
       "#kuwaitmajor",
-      "#tapiaycoello",
-      "#galanychingotto",
+      "#coellotapia",
+      "#gemmatriay",
+      "#delfibrea",
+      "#alegalan",
       "#mundialpadel",
-      "#fipgold",
-      "#padelnews",
+      "#fippadel",
       "#lunesdepadel",
-      "#siux",
-      "#padelmundial",
-      "#noticiaspadel"
+      "#padelnews"
     ],
-    "semana": "19–25 oct 2026",
-    "desde": "2026-10-19",
-    "hasta": "2026-10-25",
-    "folder": "2026-10-25_20261026-113458",
+    "semana": "26 oct – 1 nov 2026",
+    "desde": "2026-10-26",
+    "hasta": "2026-11-01",
+    "folder": "2026-11-01_20261102-075950",
     "images": [
       "slide_01.jpg",
       "slide_02.jpg",
@@ -162,9 +163,7 @@
       "slide_05.jpg",
       "slide_06.jpg",
       "slide_07.jpg",
-      "slide_08.jpg",
-      "slide_09.jpg",
-      "slide_10.jpg"
+      "slide_08.jpg"
     ]
   }
 }
