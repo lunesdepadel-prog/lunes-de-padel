@@ -1,6 +1,6 @@
 {
-  "status": "pending",
-  "telegram_offset": 527771931,
+  "status": "published",
+  "telegram_offset": 527771932,
   "draft": {
     "titular_portada": "Coello y Tapia, reyes de Kuwait y del 2026",
     "noticias": [
@@ -164,6 +164,9 @@
       "slide_06.jpg",
       "slide_07.jpg",
       "slide_08.jpg"
+    ],
+    "published": [
+      "instagram"
     ]
   }
 }
