@@ -1,5 +1,6 @@
 """Bot de Telegram: envía el borrador y lee tus órdenes (/publicar, /rehacer, /cancelar)."""
 import json
+import time
 from pathlib import Path
 
 import requests
@@ -10,12 +11,27 @@ API = "https://api.telegram.org/bot{token}/{method}"
 
 
 def _call(method: str, **kwargs) -> dict:
+    """Llama a la API de Telegram. Los cortes de red puntuales se reintentan hasta 4 veces."""
     url = API.format(token=config.env("TELEGRAM_BOT_TOKEN"), method=method)
-    r = requests.post(url, timeout=60, **kwargs)
-    data = r.json()
-    if not data.get("ok"):
-        raise RuntimeError(f"Telegram {method} falló: {data}")
-    return data["result"]
+    for intento in range(4):
+        try:
+            r = requests.post(url, timeout=60, **kwargs)
+            data = r.json()
+        except (requests.ConnectionError, requests.Timeout, ValueError) as exc:
+            if intento == 3:
+                raise
+            print(f"⚠️ Telegram {method}: {exc}. Reintentando…")
+            time.sleep(3 * (intento + 1))
+            continue
+        # 429 = demasiadas peticiones; 5xx = fallo temporal de Telegram
+        if not data.get("ok") and (r.status_code == 429 or r.status_code >= 500) and intento < 3:
+            espera = (data.get("parameters") or {}).get("retry_after", 3 * (intento + 1))
+            time.sleep(min(int(espera), 30))
+            continue
+        if not data.get("ok"):
+            raise RuntimeError(f"Telegram {method} falló: {data}")
+        return data["result"]
+    raise RuntimeError(f"Telegram {method} no respondió.")
 
 
 def chat_id() -> str:
