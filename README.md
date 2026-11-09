@@ -19,6 +19,7 @@ Cuenta automática de Instagram y TikTok que cada lunes publica un carrusel con 
 | `/fondo 3` | Si el recorte de la diapositiva 3 queda mal, pone la foto de la noticia entera a sangre en la parte de arriba |
 | `/añadir 4 las parejas que pasan la previa del Major` | Claude busca solo esa noticia y la mete en la diapositiva 4 sin tocar las demás (sin número, va al final). Actualiza también portada y textos de redes |
 | `/quitar 5` | Quita la noticia de la diapositiva 5 y actualiza portada y textos |
+| `/textos` | Vuelve a escribir la portada, los textos de Instagram y TikTok y los hashtags (por si alguno sale vacío o no te convence) |
 | `/rehacer quita la noticia X y añade Y` | Claude prepara una nueva versión con tus cambios (se pierden las fotos que hayas puesto tú) |
 | `/cancelar` | Esta semana no se publica |
 | `/generar` | Crea un borrador ahora mismo (útil para probar) |
