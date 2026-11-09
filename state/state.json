@@ -1,6 +1,6 @@
 {
-  "status": "pending",
-  "telegram_offset": 527771934,
+  "status": "published",
+  "telegram_offset": 527771935,
   "draft": {
     "titular_portada": "España, campeona del mundo de pádel en Doha",
     "noticias": [
@@ -191,6 +191,9 @@
       "slide_08.jpg",
       "slide_09.jpg",
       "slide_10.jpg"
+    ],
+    "published": [
+      "instagram"
     ]
   }
 }
