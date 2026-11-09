@@ -199,7 +199,7 @@ def _tool_input(response) -> dict | None:
 def _reparar(client, text: str) -> dict:
     """Plan B: si Claude escribió el borrador como texto con un formato roto, se le pide que lo pase a la herramienta."""
     return _pedir_con_herramienta(
-        client, ENTREGA, "Entrega este borrador con la herramienta entregar_borrador, sin cambiar el contenido:\n\n" + text, max_tokens=8000
+        client, ENTREGA, "Entrega este borrador con la herramienta entregar_borrador, sin cambiar el contenido:\n\n" + text, max_tokens=16000
     )
 
 
@@ -212,7 +212,7 @@ def fetch_weekly_news(start: date, end: date, feedback: str | None = None) -> di
     for _ in range(5):
         response = client.messages.create(
             model=config.CLAUDE_MODEL,
-            max_tokens=8000,
+            max_tokens=16000,
             system=SYSTEM_PROMPT,
             messages=messages,
             tools=tools,
@@ -235,7 +235,25 @@ def fetch_weekly_news(start: date, end: date, feedback: str | None = None) -> di
         raise ValueError("Claude no encontró noticias verificadas para esa semana.")
     data["semana"] = week_label(start, end)
     data["desde"], data["hasta"] = start.isoformat(), end.isoformat()
+    completar_textos(data)
     return data
+
+
+TEXTOS = ("titular_portada", "caption_instagram", "caption_tiktok", "titulo_tiktok", "hashtags")
+
+
+def completar_textos(draft: dict) -> None:
+    """Si Claude dejó algún texto de redes vacío (p. ej. por quedarse sin espacio), lo escribe aparte."""
+    if all(draft.get(k) for k in TEXTOS):
+        return
+    try:
+        nuevos = rewrite_texts(draft)
+    except Exception as exc:  # noqa: BLE001
+        print(f"⚠️ No se pudieron completar los textos de redes: {exc}")
+        return
+    for k in TEXTOS:
+        if not draft.get(k) and nuevos.get(k):
+            draft[k] = nuevos[k]
 
 
 # ---------------------------------------------------------------- /añadir y /quitar
@@ -266,8 +284,9 @@ ENTREGA_TEXTOS = {
             "caption_instagram": {"type": "string"},
             "caption_tiktok": {"type": "string"},
             "titulo_tiktok": {"type": "string"},
+            "hashtags": {"type": "array", "items": {"type": "string"}},
         },
-        "required": ["titular_portada", "caption_instagram", "caption_tiktok", "titulo_tiktok"],
+        "required": ["titular_portada", "caption_instagram", "caption_tiktok", "titulo_tiktok", "hashtags"],
     },
 }
 
@@ -319,6 +338,7 @@ Textos actuales (escritos para una versión anterior de la lista):
 PORTADA: {draft.get('titular_portada', '')}
 INSTAGRAM: {draft.get('caption_instagram', '')}
 TIKTOK: {draft.get('caption_tiktok', '')}
+HASHTAGS: {' '.join(draft.get('hashtags') or [])}
 
-Reescríbelos para que reflejen exactamente estas noticias y en este orden, manteniendo el mismo estilo, tono y longitud: portada (máx. 60 caracteres), Instagram (gancho, una viñeta con emoji por noticia, pregunta final; máx. 1800 caracteres, sin hashtags), TikTok (máx. 900 caracteres, sin hashtags) y título de TikTok (máx. 80 caracteres). No añadas datos que no estén en la lista."""
+Reescríbelos para que reflejen exactamente estas noticias y en este orden, manteniendo el mismo estilo, tono y longitud: portada (máx. 60 caracteres), Instagram (gancho, una viñeta con emoji por noticia, pregunta final; máx. 1800 caracteres, sin hashtags), TikTok (máx. 900 caracteres, sin hashtags) título de TikTok (máx. 80 caracteres) y entre 8 y 15 hashtags relevantes (empezando por #padel). Si algún texto actual está vacío, escríbelo desde cero con el mismo estilo. No añadas datos que no estén en la lista."""
     return _pedir_con_herramienta(client, ENTREGA_TEXTOS, prompt, system=SYSTEM_PROMPT)

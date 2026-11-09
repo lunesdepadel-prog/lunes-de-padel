@@ -7,6 +7,7 @@
   /fondo N             pone la foto de la noticia a sangre arriba, sin recortar
   /añadir [N] <qué>    Claude busca y añade UNA noticia (en la diapositiva N, o al final)
   /quitar N            quita la noticia de la diapositiva N
+  /textos              vuelve a escribir portada, textos de Instagram y TikTok y hashtags
   /rehacer <cambios>   Claude vuelve a preparar el borrador con tus indicaciones
   /cancelar            descarta el borrador de esta semana
   /generar             prepara ahora un borrador de la semana anterior
@@ -21,7 +22,7 @@ from .generate import generate, rerender
 from .images import fondo_de_la_noticia, from_user_photo, prepare_images
 from .news import fetch_single_news, rewrite_texts
 
-EDIT_CMDS = ("/foto", "/sinfoto", "/fondo", "/añadir", "/anadir", "/quitar")
+EDIT_CMDS = ("/foto", "/sinfoto", "/fondo", "/añadir", "/anadir", "/quitar", "/textos")
 from .publish import publish
 
 
@@ -78,6 +79,10 @@ def handle_edits(cmds: list[tuple[str, dict]]) -> None:
     for text, msg in cmds:
         cmd, _, arg = text.partition(" ")
         cmd = cmd.split("@")[0].lower()
+
+        if cmd == "/textos":
+            changed = lista_cambiada = True  # fuerza reescribir portada, textos y hashtags
+            continue
 
         if cmd in ("/añadir", "/anadir"):
             if _add_news(draft, arg, msg.get("message_id", 0)):
@@ -207,7 +212,7 @@ def main() -> None:
         draft = st.get("draft") or {}
         telegram.send_text(f"Estado: {st.get('status')}\nÚltimo borrador: semana {draft.get('semana', '—')}")
     else:
-        telegram.send_text("No conozco esa orden. Usa /publicar, /foto N, /sinfoto N, /fondo N, /añadir [N] <qué>, /quitar N, /rehacer <cambios>, /cancelar, /generar o /estado.")
+        telegram.send_text("No conozco esa orden. Usa /publicar, /foto N, /sinfoto N, /fondo N, /añadir [N] <qué>, /quitar N, /textos, /rehacer <cambios>, /cancelar, /generar o /estado.")
 
 
 if __name__ == "__main__":

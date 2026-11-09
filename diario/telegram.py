@@ -93,6 +93,7 @@ def send_draft(data: dict, images: list[Path]) -> None:
         "/fondo 3 → si el recorte de la diapositiva 3 queda mal, pongo la foto entera a sangre arriba\n"
         "/añadir 4 <qué noticia> → Claude busca esa noticia y la mete en la diapositiva 4 sin tocar las demás (sin número, va al final)\n"
         "/quitar 5 → quito la noticia de la diapositiva 5\n"
+        "/textos → vuelvo a escribir la portada, los textos de Instagram y TikTok y los hashtags\n"
         "/rehacer <qué cambiar> → Claude vuelve a buscar y redactar (ej: /rehacer quita la noticia de la pala y añade el FIP de Egipto). Ojo: se pierden las fotos que hayas puesto tú\n"
         "/cancelar → esta semana no se publica"
     )
