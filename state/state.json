@@ -1,160 +1,185 @@
 {
-  "status": "published",
-  "telegram_offset": 527771932,
+  "status": "pending",
+  "telegram_offset": 527771933,
   "draft": {
-    "titular_portada": "Coello y Tapia, reyes de Kuwait y del 2026",
+    "titular_portada": "España, campeona del mundo de pádel en Doha",
     "noticias": [
       {
-        "categoria": "Torneos",
-        "titulo": "Coello/Tapia y Brea/Triay se coronan en el Kuwait Major",
-        "resumen": "Coello y Tapia arrasaron a Tello y Arce en 56 minutos. Brea y Triay remontaron a Sánchez y Ustero en la final femenina y se llevan el Major de Kuwait.",
-        "fecha": "2026-10-31",
-        "fuente": "https://timeskuwait.com/coello-tapia-triay-and-brea-crowned-champions-at-premier-padel-kuwait/",
+        "categoria": "Selecciones",
+        "titulo": "España, campeona del Mundo masculina tras remontar a Argentina",
+        "resumen": "España ganó 2-1 a Argentina la final del Mundial de Doha. Goñi y Lebrón remontaron el primer punto, Tapia y Chingotto igualaron y Coello y Nieto sentenciaron el tercero.",
+        "fecha": "2026-11-07",
+        "fuente": "https://biobiochile.cl/noticias/deportes/mas-deportes/2026/11/07/padel-espana-argentina-final-del-mundo-por-equipos-masculina.shtml",
+        "imagen": {
+          "tipo": "persona",
+          "personas": [
+            "Arturo Coello",
+            "Juan Lebrón"
+          ]
+        },
         "formato": "resultado",
-        "entradilla": "13.º título de 2026 para Coello/Tapia y 7.º para Brea/Triay",
+        "entradilla": "5.º título mundial por equipos para España masculina",
         "resultados": [
           {
-            "ronda": "Final masculina",
-            "ganadores": "Coello / Tapia",
-            "perdedores": "Tello / Arce",
-            "marcador": "6-1 6-1"
+            "ronda": "Final · 1.er punto",
+            "ganadores": "Goñi / Lebrón",
+            "perdedores": "Di Nenno / Augsburger",
+            "marcador": "5-7 7-5 6-2"
           },
           {
-            "ronda": "Final femenina",
-            "ganadores": "Brea / Triay",
-            "perdedores": "Sánchez / Ustero",
-            "marcador": "3-6 6-1 6-1"
+            "ronda": "Final · 3.er punto",
+            "ganadores": "Coello / Nieto",
+            "perdedores": "Alfonso / Libaak",
+            "marcador": "6-3 6-2"
           }
         ],
-        "imagen": {
-          "tipo": "persona",
-          "personas": [
-            "Arturo Coello",
-            "Agustín Tapia"
-          ]
-        },
         "recortes": [
-          "posts/2026-11-01_20261102-075950/recortes/n01_0.png",
-          "posts/2026-11-01_20261102-075950/recortes/n01_1.png"
+          "posts/2026-11-08_20261109-112703/recortes/n01_0.png"
         ],
-        "credito": "Foto: Hombrey (CC0, Wikimedia) / Foto: Daniel Luque Jiménez (CC BY-SA 4.0, Wikimedia)",
-        "imagen_estado": "con foto"
+        "credito": "Foto: biobiochile.cl",
+        "imagen_estado": "recorte"
       },
       {
-        "categoria": "Ranking",
-        "titulo": "Coello y Tapia, matemáticamente n.º 1 por cuarto año seguido",
-        "resumen": "Con los 2.000 puntos del Kuwait Major, Coello y Tapia aseguran el número uno de final de 2026. Galán y Chingotto ya no pueden alcanzarles ni ganando los tres torneos que quedan.",
-        "fecha": "2026-10-31",
-        "fuente": "https://vibrandopadel.com/coello-y-tapia-ganan-el-kuwait-major-y-sellan-el-numero-uno-por-cuarto-ano-consecutivo/",
-        "formato": "texto",
+        "categoria": "Selecciones",
+        "titulo": "España femenina suma su séptimo Mundial seguido y el décimo",
+        "resumen": "La selección femenina derrotó 2-0 a Argentina en la final de Doha. Sánchez/Ustero abrieron el marcador y Josemaría/Triay sellaron el título en tres sets.",
+        "fecha": "2026-11-07",
+        "fuente": "https://www.elneverazo.com/mundial-de-padel-2026-espana-campeona-femenina/",
         "imagen": {
           "tipo": "persona",
           "personas": [
-            "Arturo Coello",
-            "Agustín Tapia"
+            "Paula Josemaría",
+            "Gemma Triay"
           ]
         },
-        "recortes": [
-          "posts/2026-11-01_20261102-075950/recortes/n02_0.png",
-          "posts/2026-11-01_20261102-075950/recortes/n02_1.png"
+        "formato": "resultado",
+        "entradilla": "7.º Mundial consecutivo y 10.º de la historia para España",
+        "resultados": [
+          {
+            "ronda": "Final · 1.er punto",
+            "ganadores": "Sánchez / Ustero",
+            "perdedores": "Osoro / Fassio",
+            "marcador": "6-3 6-3"
+          },
+          {
+            "ronda": "Final · 2.º punto",
+            "ganadores": "Josemaría / Triay",
+            "perdedores": "Brea / Jensen",
+            "marcador": "6-2 6-7 6-3"
+          }
         ],
-        "credito": "Foto: Hombrey (CC0, Wikimedia) / Foto: Daniel Luque Jiménez (CC BY-SA 4.0, Wikimedia)",
-        "imagen_estado": "con foto"
-      },
-      {
-        "categoria": "Otros",
-        "titulo": "Galán, lesionado, se pierde el Mundial de Doha",
-        "resumen": "Una lesión en la mano derecha ya le había apartado del Kuwait Major. La FEP confirma su baja para el Mundial de selecciones (Doha, 2-7 nov) y Javi Leal le sustituye.",
-        "fecha": "2026-10-30",
-        "fuente": "https://www.infobae.com/espana/agencias/2026/10/30/ale-galan-no-jugara-el-mundial-de-padel-por-lesion/",
-        "formato": "texto",
-        "imagen": {
-          "tipo": "persona",
-          "personas": [
-            "Alejandro Galán Romo"
-          ]
-        },
-        "recortes": [
-          "posts/2026-11-01_20261102-075950/recortes/n03_0.png"
-        ],
-        "credito": "Foto: Barcex (CC BY-SA 4.0, Wikimedia)",
-        "imagen_estado": "con foto"
-      },
-      {
-        "categoria": "Otros",
-        "titulo": "Gemma Triay, la jugadora más laureada de la historia",
-        "resumen": "Con el Kuwait Major, Gemma Triay suma su título n.º 59 y supera a Ari Sánchez y Ale Salazar, con las que estaba empatada a 58. Es el 7.º título de 2026 con Delfi Brea.",
-        "fecha": "2026-10-31",
-        "fuente": "https://www.padeladdict.com/coello-y-tapia-numero-1-por-cuarto-ano-y-gemma-triay-la-mas-laureada-de-la-historia/",
-        "formato": "texto",
-        "imagen": {
-          "tipo": "persona",
-          "personas": [
-            "Gemma Triay",
-            "Delfina Brea"
-          ]
-        },
         "recortes": [],
         "credito": "",
         "imagen_estado": "solo texto"
       },
       {
-        "categoria": "Selecciones",
-        "titulo": "Australia vuelve al Mundial de pádel ocho años después",
-        "resumen": "Australia remontó a Egipto en la final del clasificatorio Asia-África en Kuwait y se llevó la última plaza masculina para la FIP World Cup de Doha (2-7 de noviembre).",
-        "fecha": "2026-10-30",
-        "fuente": "https://www.padelfip.com/2026/10/australia-celebrate-world-cup-return-comeback-triumph-against-egypt-the-next-destination-is-doha/",
+        "categoria": "Parejas",
+        "titulo": "Galán zanja los rumores: seguirá con Chingotto en 2027",
+        "resumen": "En una entrevista con Marca, Galán confirmó que continuará con Fede Chingotto en 2027 y que preparan un equipo técnico nuevo tras la marcha de Jorge Martínez.",
+        "fecha": "2026-11-08",
+        "fuente": "https://www.padeladdict.com/galan-seguira-con-chingotto-2027-equipo-nuevo/",
+        "imagen": {
+          "tipo": "persona",
+          "personas": [
+            "Alejandro Galán",
+            "Federico Chingotto"
+          ]
+        },
         "formato": "texto",
+        "recortes": [
+          "posts/2026-11-08_20261109-112703/recortes/n03_0.png"
+        ],
+        "credito": "Foto: padeladdict.com",
+        "imagen_estado": "recorte"
+      },
+      {
+        "categoria": "Otros",
+        "titulo": "Galán y Chingotto, baja en el Dubái P1 por la mano de Ale",
+        "resumen": "Es el tercer torneo seguido que se pierde Galán (Kuwait, Mundial y Dubái). Chingotto no buscó sustituto y Leal/Guerrero entran directos al cuadro como sextos cabezas de serie.",
+        "fecha": "2026-11-07",
+        "fuente": "https://www.padeladdict.com/galan-chingotto-baja-dubai-p1-finals/",
+        "imagen": {
+          "tipo": "persona",
+          "personas": [
+            "Alejandro Galán",
+            "Federico Chingotto"
+          ]
+        },
+        "formato": "texto",
+        "recortes": [
+          "posts/2026-11-08_20261109-112703/recortes/n04_0.png"
+        ],
+        "credito": "Foto: padeladdict.com",
+        "imagen_estado": "recorte"
+      },
+      {
+        "categoria": "Selecciones",
+        "titulo": "Paquito Navarro se despide de la selección como campeón del mundo",
+        "resumen": "Debutó con España en el Mundial de Calgary 2008 y cierra su etapa con el oro en Doha. No ha anunciado su retirada del pádel: sigue compitiendo en Premier Padel.",
+        "fecha": "2026-11-07",
+        "fuente": "https://www.padeladdict.com/paquito-navarro-adios-mundial-padel-campeon/",
+        "imagen": {
+          "tipo": "persona",
+          "personas": [
+            "Paquito Navarro"
+          ]
+        },
+        "formato": "texto",
+        "recortes": [
+          "posts/2026-11-08_20261109-112703/recortes/n05_0.png"
+        ],
+        "credito": "Foto: padeladdict.com",
+        "imagen_estado": "recorte"
+      },
+      {
+        "categoria": "Material",
+        "titulo": "Decathlon lanza la primera pala con carbono aeroespacial reciclado",
+        "resumen": "La Kuikma Power Carbon LTD, creada con Fairmat, reduce hasta un 31% la huella de carbono en la superficie de golpeo. Serie de 1.000 unidades, 130 € y salida a principios de febrero de 2027.",
+        "fecha": "2026-11-04",
+        "fuente": "https://www.padelspain.net/material/835585/de-los-aviones-a-la-pista-decathlon-lanza-la-primera-pala-fabricada-con-carbono-aeroespacial-reciclado/",
         "imagen": {
           "tipo": "ninguna"
         },
+        "formato": "texto",
         "recortes": [],
         "imagen_estado": "solo texto"
       },
       {
-        "categoria": "Torneos",
-        "titulo": "Ortiz y Ferreyra ganan el FIP Silver Damac Dubai II",
-        "resumen": "Anna Ortiz y María Laura Ferreyra, cabezas de serie 1, ganaron el título femenino sin perder un set y batieron en la final a Arriola y Ryzhova por 6-2 y 6-1.",
-        "fecha": "2026-10-31",
-        "fuente": "https://www.diaridetarragona.com/deportes/polideportivo/274604/anna-ortiz-conquista-fip-silver-dubai-maria-laura-ferreyra.html",
-        "formato": "resultado",
-        "entradilla": "Segundo título de octubre para Ortiz/Ferreyra tras el Bronze de Rovigo",
-        "resultados": [
-          {
-            "ronda": "Final femenina",
-            "ganadores": "Ortiz / Ferreyra",
-            "perdedores": "Arriola / Ryzhova",
-            "marcador": "6-2 6-1"
-          }
-        ],
+        "categoria": "Material",
+        "titulo": "Joma presenta su colección de palas 2027: EVO, Pro e Iconic",
+        "resumen": "Tres gamas estructuran la nueva colección, con EVO como gran novedad. Está respaldada por Vero Virseda, Juanlu Esbrí, Alberto García Trabanco, Carolina Navarro y Juani Mieres.",
+        "fecha": "2026-11-06",
+        "fuente": "https://www.sportlife.es/material-deportivo/desvelamos-nueva-coleccion-palas-padel-joma_335621_102.html",
         "imagen": {
           "tipo": "ninguna"
         },
+        "formato": "texto",
         "recortes": [],
-        "imagen_estado": "solo texto"
+        "credito": "Foto: sportlife.es",
+        "fondo": "posts/2026-11-08_20261109-112703/fondos/n07.jpg",
+        "imagen_estado": "foto de fondo"
+      },
+      {
+        "categoria": "Clubs",
+        "titulo": "Maldivas estrena su primer FIP Silver femenino",
+        "resumen": "CROSSROADS Maldives, en el SAii Lagoon, acogió del 5 al 8 de noviembre el primer FIP Silver femenino del país, con 26 jugadoras profesionales, ocho de ellas del top 100 mundial.",
+        "fecha": "2026-11-05",
+        "fuente": "https://hoteliermaldives.com/crossroads-maldives-to-host-countrys-first-fip-silver-womens-padel-tournament/",
+        "imagen": {
+          "tipo": "ninguna"
+        },
+        "formato": "texto",
+        "recortes": [],
+        "credito": "Foto: hoteliermaldives.com",
+        "fondo": "posts/2026-11-08_20261109-112703/fondos/n08.jpg",
+        "imagen_estado": "foto de fondo"
       }
     ],
-    "caption_instagram": "🔥 SEMANA DE KUWAIT: Coello y Tapia no tienen techo y Gemma Triay ya es historia. ¡Repasamos lo mejor del pádel de esta semana!\n\n🏆 Kuwait Major: Coello/Tapia arrasan a Tello/Arce (6-1 6-1) y Brea/Triay remontan a Sánchez/Ustero (3-6 6-1 6-1).\n👑 Coello y Tapia, n.º 1 matemáticos de 2026: cuarto año consecutivo en lo más alto.\n🌟 Gemma Triay suma su título 59 y ya es la jugadora más laureada de la historia.\n🩹 Galán, lesionado en la mano derecha, se pierde el Mundial de Doha. Javi Leal ocupa su plaza en la selección.\n🌏 Australia vuelve al Mundial ocho años después tras remontar a Egipto en el clasificatorio Asia-África.\n🥈 FIP Silver Dubai II: Anna Ortiz y María Laura Ferreyra se llevan el título femenino (6-2 6-1).\n\n🌍 Del 2 al 7 de noviembre, el Mundial de selecciones en Doha.\n\n¿Quién se lleva el Mundial: España o Argentina? 👇 Te leemos en comentarios.",
-    "caption_tiktok": "👑 Coello y Tapia, n.º 1 de 2026 por cuarto año seguido tras arrasar en el Kuwait Major (6-1 6-1). Brea y Triay remontan la final femenina y Gemma ya es la más laureada de la historia con 59 títulos. 🩹 Galán se pierde el Mundial de Doha por lesión y entra Javi Leal. 🌏 Australia vuelve al Mundial tras ocho años. ¿Quién gana el Mundial, España o Argentina? 👇",
-    "titulo_tiktok": "Coello y Tapia, n.º 1 otra vez y Galán, baja para el Mundial",
-    "hashtags": [
-      "#padel",
-      "#padelespaña",
-      "#premierpadel",
-      "#kuwaitmajor",
-      "#coellotapia",
-      "#gemmatriay",
-      "#delfibrea",
-      "#alegalan",
-      "#mundialpadel",
-      "#fippadel",
-      "#lunesdepadel",
-      "#padelnews"
-    ],
-    "semana": "26 oct – 1 nov 2026",
-    "desde": "2026-10-26",
-    "hasta": "2026-11-01",
-    "folder": "2026-11-01_20261102-075950",
+    "caption_instagram": "🇪🇸🏆 ¡ESPAÑA, CAMPEONA DEL MUNDO EN DOHA! Semana histórica en el pádel: doblete en el Mundial de selecciones. Te lo resumimos 👇\n\n🥇 Los chicos remontan: España 2-1 Argentina. Goñi/Lebrón, Tapia/Chingotto (para Argentina) y Coello/Nieto decidieron una final de infarto. Es el 5.º Mundial masculino.\n👑 Las chicas, 2-0 a Argentina: 7.º Mundial seguido y 10.º de la historia, con Josemaría/Triay cerrando en tres sets.\n🤝 Galán zanja los rumores: seguirá con Chingotto en 2027 y con equipo nuevo.\n🩹 Pero Galán y Chingotto se pierden el Dubái P1 por la lesión de mano de Ale.\n👋 Paquito Navarro se despide de la selección con el oro, aunque sigue en Premier Padel.\n♻️ Decathlon presenta la primera pala con carbono aeroespacial reciclado: 1.000 unidades, 130 €.\n🆕 Joma estrena su colección 2027 con la nueva gama EVO.\n🌴 Maldivas vive su primer FIP Silver femenino.\n\n¿Quién fue el héroe de la final: Lebrón, Coello o Coki Nieto? Cuéntanoslo en comentarios 👇",
+    "semana": "2–8 nov 2026",
+    "desde": "2026-11-02",
+    "hasta": "2026-11-08",
+    "folder": "2026-11-08_20261109-112703",
     "images": [
       "slide_01.jpg",
       "slide_02.jpg",
@@ -163,10 +188,9 @@
       "slide_05.jpg",
       "slide_06.jpg",
       "slide_07.jpg",
-      "slide_08.jpg"
-    ],
-    "published": [
-      "instagram"
+      "slide_08.jpg",
+      "slide_09.jpg",
+      "slide_10.jpg"
     ]
   }
 }
