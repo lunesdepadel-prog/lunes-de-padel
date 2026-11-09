@@ -1,6 +1,6 @@
 {
   "status": "pending",
-  "telegram_offset": 527771933,
+  "telegram_offset": 527771934,
   "draft": {
     "titular_portada": "España, campeona del mundo de pádel en Doha",
     "noticias": [
@@ -125,11 +125,11 @@
           ]
         },
         "formato": "texto",
-        "recortes": [
-          "posts/2026-11-08_20261109-112703/recortes/n05_0.png"
-        ],
+        "recortes": [],
         "credito": "Foto: padeladdict.com",
-        "imagen_estado": "recorte"
+        "imagen_estado": "recorte",
+        "fondo": "posts/fondos-manuales/2026-11-08_72.jpg",
+        "foto_entera": false
       },
       {
         "categoria": "Material",
@@ -179,7 +179,7 @@
     "semana": "2–8 nov 2026",
     "desde": "2026-11-02",
     "hasta": "2026-11-08",
-    "folder": "2026-11-08_20261109-112703",
+    "folder": "2026-11-08_20261109-115047",
     "images": [
       "slide_01.jpg",
       "slide_02.jpg",
