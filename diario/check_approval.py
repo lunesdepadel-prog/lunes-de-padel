@@ -4,6 +4,7 @@
   /publicar            publica el borrador pendiente
   /foto N [crédito]    (como pie de una foto) pone esa foto recortada en la diapositiva N
   /sinfoto N           deja la diapositiva N solo con texto
+  /fondo N             pone la foto de la noticia a sangre arriba, sin recortar
   /añadir [N] <qué>    Claude busca y añade UNA noticia (en la diapositiva N, o al final)
   /quitar N            quita la noticia de la diapositiva N
   /rehacer <cambios>   Claude vuelve a preparar el borrador con tus indicaciones
@@ -17,10 +18,10 @@ from datetime import date
 
 from . import config, state, telegram
 from .generate import generate, rerender
-from .images import from_user_photo, prepare_images
+from .images import fondo_de_la_noticia, from_user_photo, prepare_images
 from .news import fetch_single_news, rewrite_texts
 
-EDIT_CMDS = ("/foto", "/sinfoto", "/añadir", "/anadir", "/quitar")
+EDIT_CMDS = ("/foto", "/sinfoto", "/fondo", "/añadir", "/anadir", "/quitar")
 from .publish import publish
 
 
@@ -98,6 +99,18 @@ def handle_edits(cmds: list[tuple[str, dict]]) -> None:
             continue
 
         n = noticias[index]
+
+        if cmd == "/fondo":
+            path = config.POSTS_DIR / "fondos-manuales" / f"{draft['hasta']}_{msg.get('message_id', 0)}.jpg"
+            try:
+                ok = fondo_de_la_noticia(n, path)
+            except Exception:  # noqa: BLE001
+                ok = False
+            if ok:
+                changed = True
+            else:
+                telegram.send_text(f"No encontré foto en la fuente de la diapositiva {index + 2}. Envíame una con /foto {index + 2}.")
+            continue
 
         if cmd == "/sinfoto":
             n.update(recortes=[], fondo=None, credito="", foto_entera=False)
@@ -194,7 +207,7 @@ def main() -> None:
         draft = st.get("draft") or {}
         telegram.send_text(f"Estado: {st.get('status')}\nÚltimo borrador: semana {draft.get('semana', '—')}")
     else:
-        telegram.send_text("No conozco esa orden. Usa /publicar, /foto N, /sinfoto N, /añadir [N] <qué>, /quitar N, /rehacer <cambios>, /cancelar, /generar o /estado.")
+        telegram.send_text("No conozco esa orden. Usa /publicar, /foto N, /sinfoto N, /fondo N, /añadir [N] <qué>, /quitar N, /rehacer <cambios>, /cancelar, /generar o /estado.")
 
 
 if __name__ == "__main__":

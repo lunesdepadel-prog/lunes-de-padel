@@ -29,8 +29,50 @@ _session = None
 
 # ---------------------------------------------------------------- recorte
 
-def cutout(raw: bytes, min_cov: float = 0.03, max_cov: float = 0.97) -> Image.Image:
-    """Quita el fondo y recorta al contorno. Lanza ValueError si el recorte sale mal."""
+def _calidad_recorte(alpha: Image.Image) -> dict:
+    """Mide si un recorte es limpio: una sola figura, bordes nítidos y sin cortar por el marco."""
+    import numpy as np
+
+    small = alpha.copy()
+    small.thumbnail((220, 220))
+    a = np.asarray(small)
+    fg = a > 128
+    total = int(fg.sum()) or 1
+
+    # piezas sueltas: tamaño de la mayor mancha conectada respecto al total
+    seen = np.zeros_like(fg)
+    mayor = 0
+    h, w = fg.shape
+    for y0, x0 in zip(*np.nonzero(fg)):
+        if seen[y0, x0]:
+            continue
+        pila, n = [(y0, x0)], 0
+        seen[y0, x0] = True
+        while pila:
+            y, x = pila.pop()
+            n += 1
+            for yy, xx in ((y + 1, x), (y - 1, x), (y, x + 1), (y, x - 1)):
+                if 0 <= yy < h and 0 <= xx < w and fg[yy, xx] and not seen[yy, xx]:
+                    seen[yy, xx] = True
+                    pila.append((yy, xx))
+        mayor = max(mayor, n)
+
+    full = np.asarray(alpha)
+    borrosos = ((full > 20) & (full < 235)).sum() / max(int((full > 20).sum()), 1)
+    return {
+        "pieza_principal": mayor / total,          # 1.0 = una sola figura
+        "borde_borroso": float(borrosos),           # proporción de píxeles semitransparentes
+        "toca_arriba": fg[0, :].mean(),             # figura cortada por arriba (brazos, cabezas)
+        "toca_lados": max(fg[:, 0].mean(), fg[:, -1].mean()),
+    }
+
+
+def cutout(raw: bytes, min_cov: float = 0.03, max_cov: float = 0.97, estricto: bool = False) -> Image.Image:
+    """Quita el fondo y recorta al contorno. Lanza ValueError si el recorte sale mal.
+
+    estricto=True (fotos de noticias, con fondos complejos) exige además una sola figura,
+    bordes nítidos y que no esté cortada por arriba ni por los lados; si no, la foto se usa a sangre.
+    """
     global _session
     from rembg import new_session, remove  # import aquí: el modelo pesa y solo se carga si hace falta
 
@@ -44,6 +86,10 @@ def cutout(raw: bytes, min_cov: float = 0.03, max_cov: float = 0.97) -> Image.Im
     coverage = sum(alpha.histogram()[129:]) / (out.width * out.height)
     if not min_cov < coverage < max_cov:
         raise ValueError("el recorte no ha detectado bien la figura")
+    if estricto:
+        q = _calidad_recorte(alpha)
+        if q["pieza_principal"] < 0.9 or q["borde_borroso"] > 0.12 or q["toca_arriba"] > 0.02 or q["toca_lados"] > 0.08:
+            raise ValueError(f"recorte poco limpio: {q}")
     bbox = alpha.point(lambda a: 255 if a > 20 else 0).getbbox()
     out = out.crop(bbox)
     out.thumbnail((1100, 1100))
@@ -195,7 +241,7 @@ def prepare_images(noticias: list[dict], folder: Path) -> None:
                 recortada = False
                 if tipo in ("persona", "producto"):
                     try:  # en una foto de noticia solo vale un recorte limpio de la figura principal
-                        n["recortes"] = [save_cutout(cutout(raw, 0.06, 0.65), folder / "recortes" / f"n{i:02d}_0.png")]
+                        n["recortes"] = [save_cutout(cutout(raw, 0.06, 0.65, estricto=True), folder / "recortes" / f"n{i:02d}_0.png")]
                         recortada = True
                     except Exception:  # noqa: BLE001
                         pass
@@ -235,6 +281,16 @@ def from_user_photo(raw: bytes, path: Path) -> tuple[str, bool]:
     Si el recorte no sale limpio, la foto se usa entera como fondo de la mitad superior.
     """
     try:
-        return save_cutout(cutout(raw, 0.06, 0.8), path), True
+        return save_cutout(cutout(raw, 0.06, 0.8, estricto=True), path), True
     except Exception:  # noqa: BLE001
         return save_fondo(raw, path.with_suffix(".jpg")), False
+
+
+def fondo_de_la_noticia(n: dict, path: Path) -> bool:
+    """/fondo N: vuelve a coger la foto de la noticia y la pone a sangre, sin recortar."""
+    found = article_photo(n.get("fuente", ""))
+    if not found:
+        return False
+    raw, credito = found
+    n.update(recortes=[], fondo=save_fondo(raw, path), credito=credito, foto_entera=False)
+    return True
