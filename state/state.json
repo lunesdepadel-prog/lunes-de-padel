@@ -1,185 +1,203 @@
 {
-  "status": "published",
+  "status": "pending",
   "telegram_offset": 527771935,
   "draft": {
-    "titular_portada": "España, campeona del mundo de pádel en Doha",
+    "titular_portada": "Dubái sin Coello ni Tapia: Lebrón y Augsburger reinan",
     "noticias": [
       {
-        "categoria": "Selecciones",
-        "titulo": "España, campeona del Mundo masculina tras remontar a Argentina",
-        "resumen": "España ganó 2-1 a Argentina la final del Mundial de Doha. Goñi y Lebrón remontaron el primer punto, Tapia y Chingotto igualaron y Coello y Nieto sentenciaron el tercero.",
-        "fecha": "2026-11-07",
-        "fuente": "https://biobiochile.cl/noticias/deportes/mas-deportes/2026/11/07/padel-espana-argentina-final-del-mundo-por-equipos-masculina.shtml",
+        "categoria": "Torneos",
+        "titulo": "Lebrón-Augsburger y Claudia-Martina, campeones en Dubái P1",
+        "resumen": "Lebrón y Augsburger se impusieron a Libaak y Alfonso (7-6, 5-7, 6-3) y Claudia Fernández y Martina Calvo ganaron a Josemaría y Bea González (7-5, 6-1). Tercer título en nueve torneos para Claudia y Martina.",
+        "fecha": "2026-11-15",
+        "fuente": "https://www.analistaspadel.com/finales-dubai-p1-lebron-augsburger-calvo/",
         "imagen": {
           "tipo": "persona",
           "personas": [
-            "Arturo Coello",
             "Juan Lebrón"
           ]
         },
         "formato": "resultado",
-        "entradilla": "5.º título mundial por equipos para España masculina",
+        "entradilla": "Segundo título del año para Lebrón-Augsburger; tercero juntas para Claudia y Martina",
         "resultados": [
           {
-            "ronda": "Final · 1.er punto",
-            "ganadores": "Goñi / Lebrón",
-            "perdedores": "Di Nenno / Augsburger",
-            "marcador": "5-7 7-5 6-2"
+            "ronda": "Final masculina",
+            "ganadores": "Lebrón / Augsburger",
+            "perdedores": "Libaak / Alfonso",
+            "marcador": "7-6 5-7 6-3"
           },
           {
-            "ronda": "Final · 3.er punto",
-            "ganadores": "Coello / Nieto",
-            "perdedores": "Alfonso / Libaak",
-            "marcador": "6-3 6-2"
-          }
-        ],
-        "recortes": [
-          "posts/2026-11-08_20261109-112703/recortes/n01_0.png"
-        ],
-        "credito": "Foto: biobiochile.cl",
-        "imagen_estado": "recorte"
-      },
-      {
-        "categoria": "Selecciones",
-        "titulo": "España femenina suma su séptimo Mundial seguido y el décimo",
-        "resumen": "La selección femenina derrotó 2-0 a Argentina en la final de Doha. Sánchez/Ustero abrieron el marcador y Josemaría/Triay sellaron el título en tres sets.",
-        "fecha": "2026-11-07",
-        "fuente": "https://www.elneverazo.com/mundial-de-padel-2026-espana-campeona-femenina/",
-        "imagen": {
-          "tipo": "persona",
-          "personas": [
-            "Paula Josemaría",
-            "Gemma Triay"
-          ]
-        },
-        "formato": "resultado",
-        "entradilla": "7.º Mundial consecutivo y 10.º de la historia para España",
-        "resultados": [
-          {
-            "ronda": "Final · 1.er punto",
-            "ganadores": "Sánchez / Ustero",
-            "perdedores": "Osoro / Fassio",
-            "marcador": "6-3 6-3"
-          },
-          {
-            "ronda": "Final · 2.º punto",
-            "ganadores": "Josemaría / Triay",
-            "perdedores": "Brea / Jensen",
-            "marcador": "6-2 6-7 6-3"
+            "ronda": "Final femenina",
+            "ganadores": "Fernández / Calvo",
+            "perdedores": "Josemaría / González",
+            "marcador": "7-5 6-1"
           }
         ],
         "recortes": [],
-        "credito": "",
-        "imagen_estado": "solo texto"
-      },
-      {
-        "categoria": "Parejas",
-        "titulo": "Galán zanja los rumores: seguirá con Chingotto en 2027",
-        "resumen": "En una entrevista con Marca, Galán confirmó que continuará con Fede Chingotto en 2027 y que preparan un equipo técnico nuevo tras la marcha de Jorge Martínez.",
-        "fecha": "2026-11-08",
-        "fuente": "https://www.padeladdict.com/galan-seguira-con-chingotto-2027-equipo-nuevo/",
-        "imagen": {
-          "tipo": "persona",
-          "personas": [
-            "Alejandro Galán",
-            "Federico Chingotto"
-          ]
-        },
-        "formato": "texto",
-        "recortes": [
-          "posts/2026-11-08_20261109-112703/recortes/n03_0.png"
-        ],
-        "credito": "Foto: padeladdict.com",
-        "imagen_estado": "recorte"
+        "credito": "Foto: analistaspadel.com",
+        "fondo": "posts/2026-11-15_20261116-090935/fondos/n01.jpg",
+        "imagen_estado": "foto de fondo"
       },
       {
         "categoria": "Otros",
-        "titulo": "Galán y Chingotto, baja en el Dubái P1 por la mano de Ale",
-        "resumen": "Es el tercer torneo seguido que se pierde Galán (Kuwait, Mundial y Dubái). Chingotto no buscó sustituto y Leal/Guerrero entran directos al cuadro como sextos cabezas de serie.",
-        "fecha": "2026-11-07",
-        "fuente": "https://www.padeladdict.com/galan-chingotto-baja-dubai-p1-finals/",
+        "titulo": "Dubái P1 se queda sin Coello-Tapia ni Galán-Chingotto",
+        "resumen": "Tapia y Coello anunciaron el 10 de noviembre su baja por indicación médica. Galán, con una lesión en la mano derecha, tampoco jugó y Chingotto decidió no buscar sustituto. El torneo se quedó sin sus dos primeras parejas masculinas.",
+        "fecha": "2026-11-10",
+        "fuente": "https://padelstar.es/noticias-padel/dubai-p1-2026-cuadros-favoritos-baja-galan-chingotto/",
         "imagen": {
           "tipo": "persona",
           "personas": [
-            "Alejandro Galán",
-            "Federico Chingotto"
-          ]
-        },
-        "formato": "texto",
-        "recortes": [
-          "posts/2026-11-08_20261109-112703/recortes/n04_0.png"
-        ],
-        "credito": "Foto: padeladdict.com",
-        "imagen_estado": "recorte"
-      },
-      {
-        "categoria": "Selecciones",
-        "titulo": "Paquito Navarro se despide de la selección como campeón del mundo",
-        "resumen": "Debutó con España en el Mundial de Calgary 2008 y cierra su etapa con el oro en Doha. No ha anunciado su retirada del pádel: sigue compitiendo en Premier Padel.",
-        "fecha": "2026-11-07",
-        "fuente": "https://www.padeladdict.com/paquito-navarro-adios-mundial-padel-campeon/",
-        "imagen": {
-          "tipo": "persona",
-          "personas": [
-            "Paquito Navarro"
+            "Agustín Tapia",
+            "Arturo Coello"
           ]
         },
         "formato": "texto",
         "recortes": [],
-        "credito": "Foto: padeladdict.com",
-        "imagen_estado": "recorte",
-        "fondo": "posts/fondos-manuales/2026-11-08_72.jpg",
-        "foto_entera": false
+        "credito": "Foto: padelstar.es",
+        "fondo": "posts/2026-11-15_20261116-090935/fondos/n02.jpg",
+        "imagen_estado": "foto de fondo"
       },
       {
-        "categoria": "Material",
-        "titulo": "Decathlon lanza la primera pala con carbono aeroespacial reciclado",
-        "resumen": "La Kuikma Power Carbon LTD, creada con Fairmat, reduce hasta un 31% la huella de carbono en la superficie de golpeo. Serie de 1.000 unidades, 130 € y salida a principios de febrero de 2027.",
-        "fecha": "2026-11-04",
-        "fuente": "https://www.padelspain.net/material/835585/de-los-aviones-a-la-pista-decathlon-lanza-la-primera-pala-fabricada-con-carbono-aeroespacial-reciclado/",
+        "categoria": "Torneos",
+        "titulo": "Brea y Triay caen en cuartos de final en Dubái",
+        "resumen": "Delfina Brea y Gemma Triay, líderes del ranking y vencedoras del Kuwait Major, quedaron eliminadas en cuartos de final del Dubái P1.",
+        "fecha": "2026-11-15",
+        "fuente": "https://examedia.com.ar/portada/post/88244846",
+        "imagen": {
+          "tipo": "persona",
+          "personas": [
+            "Delfina Brea",
+            "Gemma Triay"
+          ]
+        },
+        "formato": "texto",
+        "recortes": [
+          "posts/2026-11-15_20261116-090935/recortes/n03_0.png"
+        ],
+        "credito": "Foto: examedia.com.ar",
+        "imagen_estado": "recorte"
+      },
+      {
+        "categoria": "Torneos",
+        "titulo": "Sussarello y Stellato ganan el FIP Silver de Como en casa",
+        "resumen": "La pareja italiana, bronce en el Mundial de Doha, venció en tres sets y casi tres horas a Castillon y Vano. Antes había ganado el derbi azzurro de semifinales a Aima y Baldi (7-6, 6-1).",
+        "fecha": "2026-11-15",
+        "fuente": "https://appianews.it/padel-fip-silver-como-lazzurra-sussarello-trionfa-in-casa/",
+        "imagen": {
+          "tipo": "ninguna"
+        },
+        "formato": "resultado",
+        "entradilla": "Bronce mundial en Doha y título FIP Silver en casa para Sussarello",
+        "resultados": [
+          {
+            "ronda": "Final femenina FIP Silver Como",
+            "ganadores": "Sussarello / Stellato",
+            "perdedores": "Castillon / Vano",
+            "marcador": "6-3 6-7 6-3"
+          }
+        ],
+        "recortes": [],
+        "imagen_estado": "solo texto"
+      },
+      {
+        "categoria": "Torneos",
+        "titulo": "El Cupra FIP Tour debuta en Maldivas con título para Rodríguez-Talavan",
+        "resumen": "Nuria Rodríguez y Marta Talavan ganaron el FIP Silver Women's Padel Crossroads de Malé (disputado del 5 al 8 de noviembre) sin ceder un solo set en todo el torneo.",
+        "fecha": "2026-11-09",
+        "fuente": "https://www.padelfip.com/2026/11/rodriguez-talavan-shine-in-male-victory-on-the-circuits-debut-in-the-maldives/",
+        "imagen": {
+          "tipo": "ninguna"
+        },
+        "formato": "resultado",
+        "entradilla": "Primer torneo del FIP Tour en Maldivas y título sin perder ningún set",
+        "resultados": [
+          {
+            "ronda": "Final femenina FIP Silver",
+            "ganadores": "Rodríguez / Talavan",
+            "perdedores": "Guerra / Fernández",
+            "marcador": "6-2 6-2"
+          }
+        ],
+        "recortes": [],
+        "imagen_estado": "solo texto"
+      },
+      {
+        "categoria": "Retiradas",
+        "titulo": "Ana Catarina Nogueira anuncia su retirada del pádel profesional",
+        "resumen": "La jugadora portuguesa, de 48 años, deja el circuito profesional tras acumular multitud de trofeos, aunque seguirá vinculada al pádel.",
+        "fecha": "2026-11-13",
+        "fuente": "https://www.mundipadel.com/ana-catarina-nogueira-retira-padel-profesional",
+        "imagen": {
+          "tipo": "ninguna"
+        },
+        "formato": "texto",
+        "recortes": [],
+        "credito": "Foto: mundipadel.com",
+        "fondo": "posts/2026-11-15_20261116-090935/fondos/n06.jpg",
+        "imagen_estado": "foto de fondo"
+      },
+      {
+        "categoria": "Selecciones",
+        "titulo": "Argentina hace doblete en la FIP Junior America Padel Cup",
+        "resumen": "En Cancún, las chicas argentinas ganaron 2-0 a Brasil y los chicos 2-1 a Paraguay, con el punto decisivo de Contreras/Graupera (7-5, 6-4).",
+        "fecha": "2026-11-14",
+        "fuente": "https://www.padelfip.com/es/2026/11/argentina-conquista-el-doblete-en-cancun-paraguay-y-mexico-en-el-podio-masculino-brasil-y-chile-en-el-femenino/",
+        "imagen": {
+          "tipo": "ninguna"
+        },
+        "formato": "resultado",
+        "entradilla": "Doblete albiceleste en Cancún: oro en categoría masculina y femenina",
+        "resultados": [
+          {
+            "ronda": "Final chicos",
+            "ganadores": "Argentina",
+            "perdedores": "Paraguay",
+            "marcador": "2-1"
+          },
+          {
+            "ronda": "Final chicas",
+            "ganadores": "Argentina",
+            "perdedores": "Brasil",
+            "marcador": "2-0"
+          }
+        ],
+        "recortes": [],
+        "imagen_estado": "solo texto"
+      },
+      {
+        "categoria": "Selecciones",
+        "titulo": "Irán y Japón se coronan en la FIP Junior Asia Padel Cup",
+        "resumen": "En Yakarta, Irán se llevó el título masculino al remontar a Kuwait (2-1), con victoria de Taghizadeh/Mansouri (6-3, 6-4) en el punto decisivo. Japón ganó el título femenino.",
+        "fecha": "2026-11-14",
+        "fuente": "https://www.padelfip.com/es/2026/11/fiesta-de-japon-en-yakarta-triunfo-en-la-categoria-femenina-iran-conquista-el-titulo-masculino-con-una-remontada/",
         "imagen": {
           "tipo": "ninguna"
         },
         "formato": "texto",
         "recortes": [],
         "imagen_estado": "solo texto"
-      },
-      {
-        "categoria": "Material",
-        "titulo": "Joma presenta su colección de palas 2027: EVO, Pro e Iconic",
-        "resumen": "Tres gamas estructuran la nueva colección, con EVO como gran novedad. Está respaldada por Vero Virseda, Juanlu Esbrí, Alberto García Trabanco, Carolina Navarro y Juani Mieres.",
-        "fecha": "2026-11-06",
-        "fuente": "https://www.sportlife.es/material-deportivo/desvelamos-nueva-coleccion-palas-padel-joma_335621_102.html",
-        "imagen": {
-          "tipo": "ninguna"
-        },
-        "formato": "texto",
-        "recortes": [],
-        "credito": "Foto: sportlife.es",
-        "fondo": "posts/2026-11-08_20261109-112703/fondos/n07.jpg",
-        "imagen_estado": "foto de fondo"
-      },
-      {
-        "categoria": "Clubs",
-        "titulo": "Maldivas estrena su primer FIP Silver femenino",
-        "resumen": "CROSSROADS Maldives, en el SAii Lagoon, acogió del 5 al 8 de noviembre el primer FIP Silver femenino del país, con 26 jugadoras profesionales, ocho de ellas del top 100 mundial.",
-        "fecha": "2026-11-05",
-        "fuente": "https://hoteliermaldives.com/crossroads-maldives-to-host-countrys-first-fip-silver-womens-padel-tournament/",
-        "imagen": {
-          "tipo": "ninguna"
-        },
-        "formato": "texto",
-        "recortes": [],
-        "credito": "Foto: hoteliermaldives.com",
-        "fondo": "posts/2026-11-08_20261109-112703/fondos/n08.jpg",
-        "imagen_estado": "foto de fondo"
       }
     ],
-    "caption_instagram": "🇪🇸🏆 ¡ESPAÑA, CAMPEONA DEL MUNDO EN DOHA! Semana histórica en el pádel: doblete en el Mundial de selecciones. Te lo resumimos 👇\n\n🥇 Los chicos remontan: España 2-1 Argentina. Goñi/Lebrón, Tapia/Chingotto (para Argentina) y Coello/Nieto decidieron una final de infarto. Es el 5.º Mundial masculino.\n👑 Las chicas, 2-0 a Argentina: 7.º Mundial seguido y 10.º de la historia, con Josemaría/Triay cerrando en tres sets.\n🤝 Galán zanja los rumores: seguirá con Chingotto en 2027 y con equipo nuevo.\n🩹 Pero Galán y Chingotto se pierden el Dubái P1 por la lesión de mano de Ale.\n👋 Paquito Navarro se despide de la selección con el oro, aunque sigue en Premier Padel.\n♻️ Decathlon presenta la primera pala con carbono aeroespacial reciclado: 1.000 unidades, 130 €.\n🆕 Joma estrena su colección 2027 con la nueva gama EVO.\n🌴 Maldivas vive su primer FIP Silver femenino.\n\n¿Quién fue el héroe de la final: Lebrón, Coello o Coki Nieto? Cuéntanoslo en comentarios 👇",
-    "semana": "2–8 nov 2026",
-    "desde": "2026-11-02",
-    "hasta": "2026-11-08",
-    "folder": "2026-11-08_20261109-115047",
+    "caption_instagram": "🎾 Semana de resaca mundialista y Dubái sin sus dos mejores parejas. ¡Repasamos lo que no te puedes perder!\n\n🏆 Dubái P1: Lebrón y Augsburger vencen a Libaak y Alfonso (7-6, 5-7, 6-3) y Claudia Fernández y Martina Calvo ganan a Josemaría y Bea González (7-5, 6-1).\n🩹 Coello-Tapia (por indicación médica) y Galán-Chingotto (lesión de mano de Galán) se quedaron fuera de Dubái.\n😮 Brea y Triay, eliminadas en cuartos de final.\n🇮🇹 Sussarello y Stellato ganan el FIP Silver de Como (6-3, 6-7, 6-3) en casa.\n🇲🇻 El FIP Tour debuta en Maldivas: título para Rodríguez y Talavan (6-2, 6-2).\n👋 Ana Catarina Nogueira anuncia su retirada del pádel profesional.\n🇦🇷 Argentina hace doblete en la FIP Junior America Padel Cup de Cancún.\n🌏 Irán (chicos) y Japón (chicas), campeones de la FIP Junior Asia Padel Cup en Yakarta.\n\n👇 ¿Qué final de Dubái te gustó más? ¿Y quién crees que llegará más fuerte al Major de México?",
+    "caption_tiktok": "🎾 Dubái P1 sin Coello-Tapia ni Galán-Chingotto y con nuevos campeones: Lebrón y Augsburger (7-6, 5-7, 6-3 a Libaak y Alfonso) y Claudia Fernández y Martina Calvo (7-5, 6-1 a Josemaría y Bea). 😮 Brea y Triay cayeron en cuartos. 🇮🇹 Sussarello y Stellato ganan en Como, el FIP Tour debuta en Maldivas, Nogueira se retira y Argentina hace doblete junior en Cancún. ¿Quién te sorprendió más? 👇",
+    "titulo_tiktok": "Dubái sin Coello-Tapia: nuevos campeones y lo mejor de la semana",
+    "hashtags": [
+      "#padel",
+      "#premierpadel",
+      "#dubaip1",
+      "#lebron",
+      "#augsburger",
+      "#claudiafernandez",
+      "#martinacalvo",
+      "#fiptour",
+      "#padelnoticias",
+      "#lunesdepadel",
+      "#cooelloytapia",
+      "#padelespaña"
+    ],
+    "semana": "9–15 nov 2026",
+    "desde": "2026-11-09",
+    "hasta": "2026-11-15",
+    "folder": "2026-11-15_20261116-090935",
     "images": [
       "slide_01.jpg",
       "slide_02.jpg",
@@ -191,9 +209,6 @@
       "slide_08.jpg",
       "slide_09.jpg",
       "slide_10.jpg"
-    ],
-    "published": [
-      "instagram"
     ]
   }
 }
