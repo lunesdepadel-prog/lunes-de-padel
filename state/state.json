@@ -1,203 +1,213 @@
 {
-  "status": "published",
+  "status": "pending",
   "telegram_offset": 527771936,
   "draft": {
-    "titular_portada": "Dubái sin Coello ni Tapia: Lebrón y Augsburger reinan",
+    "titular_portada": "Sorpresa en Aguascalientes: Gala y Bergamini campeones",
     "noticias": [
       {
         "categoria": "Torneos",
-        "titulo": "Lebrón-Augsburger y Claudia-Martina, campeones en Dubái P1",
-        "resumen": "Lebrón y Augsburger se impusieron a Libaak y Alfonso (7-6, 5-7, 6-3) y Claudia Fernández y Martina Calvo ganaron a Josemaría y Bea González (7-5, 6-1). Tercer título en nueve torneos para Claudia y Martina.",
-        "fecha": "2026-11-15",
-        "fuente": "https://www.analistaspadel.com/finales-dubai-p1-lebron-augsburger-calvo/",
-        "imagen": {
-          "tipo": "persona",
-          "personas": [
-            "Juan Lebrón"
-          ]
-        },
+        "titulo": "Gala y Bergamini y Osoro y Jensen, campeones en Aguascalientes",
+        "resumen": "El último FIP Platinum de 2026 coronó a Gala/Bergamini en chicos y a Osoro/Jensen, que remontaron un 1-6 inicial, en chicas. Ambas parejas sumaron 300 puntos en la FIP Race.",
+        "fecha": "2026-11-22",
+        "fuente": "https://www.padelfip.com/es/2026/11/aguascalientes-gala-bergamini-y-osoro-jensen-conquistan-los-titulos-y-los-300-puntos-de-la-fip-race-en-acapulco-la-hora-de-la-verdad/",
         "formato": "resultado",
-        "entradilla": "Segundo título del año para Lebrón-Augsburger; tercero juntas para Claudia y Martina",
+        "entradilla": "4.º título del Cupra FIP Tour de 2026 para David Gala",
         "resultados": [
           {
             "ronda": "Final masculina",
-            "ganadores": "Lebrón / Augsburger",
-            "perdedores": "Libaak / Alfonso",
-            "marcador": "7-6 5-7 6-3"
+            "ganadores": "Gala / Bergamini",
+            "perdedores": "Goñi / Alonso",
+            "marcador": "6-4 6-2"
           },
           {
             "ronda": "Final femenina",
-            "ganadores": "Fernández / Calvo",
-            "perdedores": "Josemaría / González",
-            "marcador": "7-5 6-1"
+            "ganadores": "Osoro / Jensen",
+            "perdedores": "Castelló / Rodríguez",
+            "marcador": "1-6 7-5 7-5"
           }
         ],
+        "imagen": {
+          "tipo": "persona",
+          "personas": [
+            "David Gala",
+            "Lucas Bergamini"
+          ]
+        },
         "recortes": [],
-        "credito": "Foto: analistaspadel.com",
-        "fondo": "posts/2026-11-15_20261116-090935/fondos/n01.jpg",
+        "credito": "",
+        "imagen_estado": "solo texto"
+      },
+      {
+        "categoria": "Torneos",
+        "titulo": "México Major: sin Galán y Chingotto, Coello y Tapia van a por todo",
+        "resumen": "El último Major del año arranca el 23 de noviembre en Acapulco. Coello y Tapia buscan su título 14 de 2026 para igualar su marca de 2024, y Triay y Brea pueden cerrar el número 1 femenino.",
+        "fecha": "2026-11-22",
+        "fuente": "https://padelstar.es/noticias-padel/mexico-major-2026-galan-chingotto-baja-coello-tapia-record/",
+        "formato": "lista",
+        "entradilla": "Cabezas de serie del Major de Acapulco (23-29 de noviembre)",
+        "grupos": [
+          {
+            "titulo": "Masculino",
+            "elementos": [
+              "Coello / Tapia (1)",
+              "Lebrón / Augsburger (2)"
+            ]
+          },
+          {
+            "titulo": "Femenino",
+            "elementos": [
+              "Triay / Brea (1)"
+            ]
+          }
+        ],
+        "imagen": {
+          "tipo": "persona",
+          "personas": [
+            "Arturo Coello",
+            "Agustín Tapia"
+          ]
+        },
+        "recortes": [],
+        "credito": "Foto: padelstar.es",
+        "fondo": "posts/2026-11-22_20261123-081256/fondos/n02.jpg",
         "imagen_estado": "foto de fondo"
       },
       {
         "categoria": "Otros",
-        "titulo": "Dubái P1 se queda sin Coello-Tapia ni Galán-Chingotto",
-        "resumen": "Tapia y Coello anunciaron el 10 de noviembre su baja por indicación médica. Galán, con una lesión en la mano derecha, tampoco jugó y Chingotto decidió no buscar sustituto. El torneo se quedó sin sus dos primeras parejas masculinas.",
-        "fecha": "2026-11-10",
-        "fuente": "https://padelstar.es/noticias-padel/dubai-p1-2026-cuadros-favoritos-baja-galan-chingotto/",
+        "titulo": "Galán, baja en el México Major por su lesión en la mano",
+        "resumen": "Ale Galán anunció el 21 de noviembre que no jugará en Acapulco. Chingotto también se pierde el último Major del año y Lebrón y Augsburger pasan a ser segundos cabezas de serie.",
+        "fecha": "2026-11-21",
+        "fuente": "https://padel-magazine.es/Gal%C3%A1n-se-retira-del-Major-de-M%C3%A9xico--Chingotto-tambi%C3%A9n-se-pierde-el-%C3%BAltimo-major-de-la-temporada./",
+        "formato": "texto",
         "imagen": {
           "tipo": "persona",
           "personas": [
-            "Agustín Tapia",
-            "Arturo Coello"
+            "Alejandro Galán",
+            "Federico Chingotto"
           ]
         },
-        "formato": "texto",
         "recortes": [],
-        "credito": "Foto: padelstar.es",
-        "fondo": "posts/2026-11-15_20261116-090935/fondos/n02.jpg",
+        "credito": "Foto: padel-magazine.es",
+        "fondo": "posts/2026-11-22_20261123-081256/fondos/n03.jpg",
         "imagen_estado": "foto de fondo"
       },
       {
-        "categoria": "Torneos",
-        "titulo": "Brea y Triay caen en cuartos de final en Dubái",
-        "resumen": "Delfina Brea y Gemma Triay, líderes del ranking y vencedoras del Kuwait Major, quedaron eliminadas en cuartos de final del Dubái P1.",
-        "fecha": "2026-11-15",
-        "fuente": "https://examedia.com.ar/portada/post/88244846",
+        "categoria": "Ranking",
+        "titulo": "Jensen ya tiene billete para las Finals de Barcelona",
+        "resumen": "Tras ganar en Aguascalientes junto a Osoro, Claudia Jensen tiene asegurada su presencia en la cita del Palau Sant Jordi, que cierra la temporada en diciembre.",
+        "fecha": "2026-11-22",
+        "fuente": "https://www.elneverazo.com/david-gala-y-lucas-bergamini-y-aranza-osoro-y-claudia-jensen-conquistan-el-fip-platinum-aguascalientes/",
+        "formato": "texto",
         "imagen": {
           "tipo": "persona",
           "personas": [
-            "Delfina Brea",
-            "Gemma Triay"
+            "Claudia Jensen"
           ]
         },
-        "formato": "texto",
-        "recortes": [
-          "posts/2026-11-15_20261116-090935/recortes/n03_0.png"
-        ],
-        "credito": "Foto: examedia.com.ar",
-        "imagen_estado": "recorte"
-      },
-      {
-        "categoria": "Torneos",
-        "titulo": "Sussarello y Stellato ganan el FIP Silver de Como en casa",
-        "resumen": "La pareja italiana, bronce en el Mundial de Doha, venció en tres sets y casi tres horas a Castillon y Vano. Antes había ganado el derbi azzurro de semifinales a Aima y Baldi (7-6, 6-1).",
-        "fecha": "2026-11-15",
-        "fuente": "https://appianews.it/padel-fip-silver-como-lazzurra-sussarello-trionfa-in-casa/",
-        "imagen": {
-          "tipo": "ninguna"
-        },
-        "formato": "resultado",
-        "entradilla": "Bronce mundial en Doha y título FIP Silver en casa para Sussarello",
-        "resultados": [
-          {
-            "ronda": "Final femenina FIP Silver Como",
-            "ganadores": "Sussarello / Stellato",
-            "perdedores": "Castillon / Vano",
-            "marcador": "6-3 6-7 6-3"
-          }
-        ],
         "recortes": [],
+        "credito": "",
         "imagen_estado": "solo texto"
       },
       {
         "categoria": "Torneos",
-        "titulo": "El Cupra FIP Tour debuta en Maldivas con título para Rodríguez-Talavan",
-        "resumen": "Nuria Rodríguez y Marta Talavan ganaron el FIP Silver Women's Padel Crossroads de Malé (disputado del 5 al 8 de noviembre) sin ceder un solo set en todo el torneo.",
-        "fecha": "2026-11-09",
-        "fuente": "https://www.padelfip.com/2026/11/rodriguez-talavan-shine-in-male-victory-on-the-circuits-debut-in-the-maldives/",
-        "imagen": {
-          "tipo": "ninguna"
-        },
+        "titulo": "Ghana estrena el FIP Tour con el Bronze S2 de Accra",
+        "resumen": "Primer torneo FIP de la historia en Ghana, disputado en el S2 Sport Club de Spintex. Dos parejas españolas se llevaron los títulos masculino y femenino.",
+        "fecha": "2026-11-22",
+        "fuente": "https://www.myjoyonline.com/fip-bronze-s2-accra-ghana-takes-major-step-in-padel-development-with-historic-tournament/",
         "formato": "resultado",
-        "entradilla": "Primer torneo del FIP Tour en Maldivas y título sin perder ningún set",
+        "entradilla": "Debut del Cupra FIP Tour en Ghana",
         "resultados": [
           {
-            "ronda": "Final femenina FIP Silver",
-            "ganadores": "Rodríguez / Talavan",
-            "perdedores": "Guerra / Fernández",
-            "marcador": "6-2 6-2"
-          }
-        ],
-        "recortes": [],
-        "imagen_estado": "solo texto"
-      },
-      {
-        "categoria": "Retiradas",
-        "titulo": "Ana Catarina Nogueira anuncia su retirada del pádel profesional",
-        "resumen": "La jugadora portuguesa, de 48 años, deja el circuito profesional tras acumular multitud de trofeos, aunque seguirá vinculada al pádel.",
-        "fecha": "2026-11-13",
-        "fuente": "https://www.mundipadel.com/ana-catarina-nogueira-retira-padel-profesional",
-        "imagen": {
-          "tipo": "ninguna"
-        },
-        "formato": "texto",
-        "recortes": [],
-        "credito": "Foto: mundipadel.com",
-        "fondo": "posts/2026-11-15_20261116-090935/fondos/n06.jpg",
-        "imagen_estado": "foto de fondo"
-      },
-      {
-        "categoria": "Selecciones",
-        "titulo": "Argentina hace doblete en la FIP Junior America Padel Cup",
-        "resumen": "En Cancún, las chicas argentinas ganaron 2-0 a Brasil y los chicos 2-1 a Paraguay, con el punto decisivo de Contreras/Graupera (7-5, 6-4).",
-        "fecha": "2026-11-14",
-        "fuente": "https://www.padelfip.com/es/2026/11/argentina-conquista-el-doblete-en-cancun-paraguay-y-mexico-en-el-podio-masculino-brasil-y-chile-en-el-femenino/",
-        "imagen": {
-          "tipo": "ninguna"
-        },
-        "formato": "resultado",
-        "entradilla": "Doblete albiceleste en Cancún: oro en categoría masculina y femenina",
-        "resultados": [
-          {
-            "ronda": "Final chicos",
-            "ganadores": "Argentina",
-            "perdedores": "Paraguay",
-            "marcador": "2-1"
+            "ronda": "Final masculina",
+            "ganadores": "Ronco / Figuerola",
+            "perdedores": "Wakim / Alami",
+            "marcador": "6-4 6-1"
           },
           {
-            "ronda": "Final chicas",
-            "ganadores": "Argentina",
-            "perdedores": "Brasil",
-            "marcador": "2-0"
+            "ronda": "Final femenina",
+            "ganadores": "Sánchez Vera / Ntanou",
+            "perdedores": "Sireix / De Vocht",
+            "marcador": "6-3 6-4"
           }
         ],
+        "imagen": {
+          "tipo": "ninguna"
+        },
+        "recortes": [],
+        "credito": "Foto: myjoyonline.com",
+        "fondo": "posts/2026-11-22_20261123-081256/fondos/n05.jpg",
+        "imagen_estado": "foto de fondo"
+      },
+      {
+        "categoria": "Torneos",
+        "titulo": "Peinado y Meléndez Amaya ganan el FIP Silver de Nápoles",
+        "resumen": "La pareja española se impuso en la final masculina del FIP Silver by MCV, con 20.000 euros en premios, dentro de la feria Padelness & Sport en la Mostra d'Oltremare.",
+        "fecha": "2026-11-22",
+        "fuente": "https://www.napolitoday.it/sport/padelness-sport-terza-edizione-mostra-oltremare.html",
+        "formato": "resultado",
+        "entradilla": "FIP Silver con unos 150 jugadores de todo el mundo",
+        "resultados": [
+          {
+            "ronda": "Final masculina",
+            "ganadores": "Peinado / Meléndez Amaya",
+            "perdedores": "Axelsson / Ortega",
+            "marcador": "7-6 6-4"
+          }
+        ],
+        "imagen": {
+          "tipo": "ninguna"
+        },
+        "recortes": [],
+        "credito": "Foto: napolitoday.it",
+        "fondo": "posts/2026-11-22_20261123-081256/fondos/n06.jpg",
+        "imagen_estado": "foto de fondo"
+      },
+      {
+        "categoria": "Otros",
+        "titulo": "Bullpadel y la Federación Madrileña amplían su acuerdo a 2028",
+        "resumen": "La FMP y Bullpadel extienden su colaboración para las temporadas 2027 y 2028, tras 16 años juntas. La marca seguirá como patrocinador principal de los circuitos de Menores, Absoluto y Veteranos.",
+        "fecha": "2026-11-19",
+        "fuente": "https://www.padelspain.net/padel-amateur/836059/la-federacion-madrilena-renueva-uno-de-sus-principales-patrocinios/",
+        "formato": "texto",
+        "imagen": {
+          "tipo": "ninguna"
+        },
         "recortes": [],
         "imagen_estado": "solo texto"
       },
       {
-        "categoria": "Selecciones",
-        "titulo": "Irán y Japón se coronan en la FIP Junior Asia Padel Cup",
-        "resumen": "En Yakarta, Irán se llevó el título masculino al remontar a Kuwait (2-1), con victoria de Taghizadeh/Mansouri (6-3, 6-4) en el punto decisivo. Japón ganó el título femenino.",
-        "fecha": "2026-11-14",
-        "fuente": "https://www.padelfip.com/es/2026/11/fiesta-de-japon-en-yakarta-triunfo-en-la-categoria-femenina-iran-conquista-el-titulo-masculino-con-una-remontada/",
+        "categoria": "Otros",
+        "titulo": "Mérida acoge el Master Final de menores con 10 títulos en juego",
+        "resumen": "Del 20 al 22 de noviembre, el C.D. Padelmérida celebra por tercer año el cierre de la temporada de formación de la Federación Española, con las ocho mejores parejas de cada categoría.",
+        "fecha": "2026-11-20",
+        "fuente": "https://www.padelspain.net/padel-amateur/836069/la-fiesta-de-los-menores-se-prepara-para-recibir-su-particular-master-final/",
+        "formato": "texto",
         "imagen": {
           "tipo": "ninguna"
         },
-        "formato": "texto",
         "recortes": [],
         "imagen_estado": "solo texto"
       }
     ],
-    "caption_instagram": "🎾 Semana de resaca mundialista y Dubái sin sus dos mejores parejas. ¡Repasamos lo que no te puedes perder!\n\n🏆 Dubái P1: Lebrón y Augsburger vencen a Libaak y Alfonso (7-6, 5-7, 6-3) y Claudia Fernández y Martina Calvo ganan a Josemaría y Bea González (7-5, 6-1).\n🩹 Coello-Tapia (por indicación médica) y Galán-Chingotto (lesión de mano de Galán) se quedaron fuera de Dubái.\n😮 Brea y Triay, eliminadas en cuartos de final.\n🇮🇹 Sussarello y Stellato ganan el FIP Silver de Como (6-3, 6-7, 6-3) en casa.\n🇲🇻 El FIP Tour debuta en Maldivas: título para Rodríguez y Talavan (6-2, 6-2).\n👋 Ana Catarina Nogueira anuncia su retirada del pádel profesional.\n🇦🇷 Argentina hace doblete en la FIP Junior America Padel Cup de Cancún.\n🌏 Irán (chicos) y Japón (chicas), campeones de la FIP Junior Asia Padel Cup en Yakarta.\n\n👇 ¿Qué final de Dubái te gustó más? ¿Y quién crees que llegará más fuerte al Major de México?",
-    "caption_tiktok": "🎾 Dubái P1 sin Coello-Tapia ni Galán-Chingotto y con nuevos campeones: Lebrón y Augsburger (7-6, 5-7, 6-3 a Libaak y Alfonso) y Claudia Fernández y Martina Calvo (7-5, 6-1 a Josemaría y Bea). 😮 Brea y Triay cayeron en cuartos. 🇮🇹 Sussarello y Stellato ganan en Como, el FIP Tour debuta en Maldivas, Nogueira se retira y Argentina hace doblete junior en Cancún. ¿Quién te sorprendió más? 👇",
-    "titulo_tiktok": "Dubái sin Coello-Tapia: nuevos campeones y lo mejor de la semana",
+    "caption_instagram": "🎾 Lunes de Pádel: la semana en 8 noticias\n\n🏆 Gala y Bergamini dan la sorpresa en el FIP Platinum de Aguascalientes (6-4 6-2 a Goñi y Alonso) y Osoro y Jensen remontan en la final femenina (1-6 7-5 7-5).\n🇲🇽 México Major: arranca en Acapulco con Coello y Tapia a por su título 14 del año y Triay y Brea con el número 1 femenino en juego.\n🤕 Ale Galán, baja en México por su lesión en la mano. Chingotto tampoco juega.\n🎫 Claudia Jensen ya tiene billete para las Finals de Barcelona.\n🇬🇭 Ghana estrena el FIP Tour: Ronco/Figuerola y Sánchez Vera/Ntanou, campeones del Bronze de Accra.\n🇮🇹 Peinado y Meléndez Amaya ganan el FIP Silver de Nápoles (7-6 6-4).\n🤝 Bullpadel y la Federación Madrileña amplían su acuerdo hasta 2028.\n🧒 Mérida acoge el Master Final de menores con 10 títulos en juego.\n\n¿Quién se lleva el último Major del año? Cuéntanoslo en comentarios 👇",
+    "caption_tiktok": "🎾 Resumen semanal del pádel: Gala y Bergamini dan la campanada en Aguascalientes y Osoro/Jensen remontan en chicas. Galán se pierde el México Major por lesión, Coello y Tapia van a por el récord y Ghana estrena el FIP Tour. ¿Quién gana en Acapulco? 👇",
+    "titulo_tiktok": "Campanada en Aguascalientes y Galán se cae del Major",
     "hashtags": [
       "#padel",
+      "#padelnews",
       "#premierpadel",
-      "#dubaip1",
-      "#lebron",
-      "#augsburger",
-      "#claudiafernandez",
-      "#martinacalvo",
       "#fiptour",
-      "#padelnoticias",
       "#lunesdepadel",
-      "#cooelloytapia",
-      "#padelespaña"
+      "#mexicomajor",
+      "#coelloytapia",
+      "#alegalan",
+      "#padelespaña",
+      "#noticiaspadel"
     ],
-    "semana": "9–15 nov 2026",
-    "desde": "2026-11-09",
-    "hasta": "2026-11-15",
-    "folder": "2026-11-15_20261116-090935",
+    "semana": "16–22 nov 2026",
+    "desde": "2026-11-16",
+    "hasta": "2026-11-22",
+    "folder": "2026-11-22_20261123-081256",
     "images": [
       "slide_01.jpg",
       "slide_02.jpg",
@@ -209,9 +219,6 @@
       "slide_08.jpg",
       "slide_09.jpg",
       "slide_10.jpg"
-    ],
-    "published": [
-      "instagram"
     ]
   }
 }
