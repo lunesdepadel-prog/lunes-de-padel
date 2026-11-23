@@ -1,6 +1,6 @@
 {
-  "status": "pending",
-  "telegram_offset": 527771936,
+  "status": "published",
+  "telegram_offset": 527771937,
   "draft": {
     "titular_portada": "Sorpresa en Aguascalientes: Gala y Bergamini campeones",
     "noticias": [
@@ -219,6 +219,9 @@
       "slide_08.jpg",
       "slide_09.jpg",
       "slide_10.jpg"
+    ],
+    "published": [
+      "instagram"
     ]
   }
 }
